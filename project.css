@@ -1,25 +1,36 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
 }
 
 header {
     background-color: #333;
     color: white;
-    padding: 10px 0;
+    padding: 1rem 0;
+}
+
+header h1 {
+    margin: 0;
     text-align: center;
 }
 
 header nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 header nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 header nav ul li a {
@@ -27,17 +38,53 @@ header nav ul li a {
     text-decoration: none;
 }
 
-main {
-    padding: 20px;
+.hero {
+    background-color: #f4f4f4;
+    padding: 2rem 0;
     text-align: center;
+}
+
+.hero h2 {
+    margin: 0;
+}
+
+section {
+    padding: 2rem 0;
 }
 
 footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 1rem 0;
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 1rem;
+}
+
+form input, form textarea, form button {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+form button:hover {
+    background-color: #555;
 }

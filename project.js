@@ -1,5 +1,5 @@
-function changeBackgroundColor() {
-    const colors = ['#f1c40f', '#e74c3c', '#9b59b6', '#3498db', '#2ecc71'];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    document.querySelector('main').style.backgroundColor = randomColor;
-}
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Thank you for your message! I will get back to you soon.');
+    document.getElementById('contactForm').reset();
+});
