@@ -1,32 +1,33 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+/* styles.css */
+
+/* General Styles */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --form-bg-color: #ffffff;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    background-color: #333;
+    background-color: var(--primary-color);
     color: white;
     padding: 1rem 0;
-}
-
-header h1 {
-    margin: 0;
     text-align: center;
 }
 
 header nav ul {
     list-style: none;
     padding: 0;
-    text-align: center;
+    margin: 0;
 }
 
 header nav ul li {
@@ -39,51 +40,60 @@ header nav ul li a {
     text-decoration: none;
 }
 
-.hero {
-    background-color: #f4f4f4;
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.hero h2 {
-    margin: 0;
-}
-
 section {
-    padding: 2rem 0;
-}
-
-footer {
-    background-color: #333;
-    color: white;
+    padding: 2rem;
     text-align: center;
-    padding: 1rem 0;
 }
 
-.service-box, .portfolio-item {
-    margin: 1rem 0;
+.portfolio-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.portfolio-item {
+    background-color: var(--form-bg-color);
+    border: 1px solid #ddd;
+    border-radius: 8px;
     padding: 1rem;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    width: 300px;
 }
 
-.service-box i {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.portfolio-item img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.service-item {
+    background-color: var(--form-bg-color);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+    background-color: var(--form-bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 form label {
+    display: block;
     margin: 0.5rem 0 0.2rem;
 }
 
 form input, form textarea {
+    width: 100%;
     padding: 0.5rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
@@ -92,9 +102,18 @@ form input, form textarea {
 
 form button {
     padding: 0.5rem;
-    background-color: #333;
+    background-color: var(--secondary-color);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+form button:hover {
+    background-color: #27ae60;
+}
+
+#responseMessage {
+    margin-top: 1rem;
+    font-weight: bold;
 }

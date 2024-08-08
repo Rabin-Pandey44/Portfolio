@@ -3,99 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhishan Kapri - Professional Portfolio</title>
-    <link rel="stylesheet" href="project.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Bhishan Kapri</h1>
+            <h1>My Website</h1>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <section id="home" class="hero">
+    
+    <section id="home">
         <div class="container">
-            <h2>Welcome to My Professional Portfolio</h2>
-            <p>Showcasing my skills and projects.</p>
+            <h2>Welcome to My Website</h2>
+            <p>Your one-stop solution for amazing things.</p>
+            <a href="#contact" class="button">Get in Touch</a>
         </div>
     </section>
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Hello! I am Bhishan Kapri, a professional web developer with expertise in creating dynamic and beautiful web pages. I have a passion for coding and love to create for web and mobile devices.</p>
-        </div>
-    </section>
-    <section id="services">
-        <div class="container">
-            <h2>Services</h2>
-            <div class="service-box">
-                <i class="fas fa-code"></i>
-                <h3>Web Development</h3>
-                <p>Creating modern and responsive web applications.</p>
-            </div>
-            <div class="service-box">
-                <i class="fas fa-paint-brush"></i>
-                <h3>UI/UX Design</h3>
-                <p>Designing user-friendly and aesthetic interfaces.</p>
-            </div>
-            <div class="service-box">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>Mobile Development</h3>
-                <p>Developing mobile applications for various platforms.</p>
-            </div>
-        </div>
-    </section>
+
     <section id="portfolio">
         <div class="container">
             <h2>Portfolio</h2>
-            <div class="portfolio-item">
-                <img src="project1.jpg" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>Description of project 1.</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="project2.jpg" alt="Project 2">
-                <h3>Project 2</h3>
-                <p>Description of project 2.</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="project3.jpg" alt="Project 3">
-                <h3>Project 3</h3>
-                <p>Description of project 3.</p>
+            <div class="portfolio-gallery">
+                <div class="portfolio-item">
+                    <img src="portfolio1.jpg" alt="Project 1">
+                    <h3>Project Title 1</h3>
+                    <p>Description of project 1.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="portfolio2.jpg" alt="Project 2">
+                    <h3>Project Title 2</h3>
+                    <p>Description of project 2.</p>
+                </div>
+                <!-- Add more portfolio items as needed -->
             </div>
         </div>
     </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>Service 1</h3>
+                    <p>Description of service 1.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Service 2</h3>
+                    <p>Description of service 2.</p>
+                </div>
+                <!-- Add more services as needed -->
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
         <div class="container">
-            <h2>Contact Me</h2>
-            <form id="contactForm">
+            <h2>Contact Us</h2>
+            <form id="contactForm" action="contact.php" method="post">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                
-                <button type="submit">Send</button>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+                <button type="submit">Submit</button>
+                <p id="responseMessage"></p>
             </form>
         </div>
     </section>
+
     <footer>
         <div class="container">
-            <p>&copy; 2024 Bhishan Kapri. All rights reserved.</p>
+            <p>&copy; 2024 My Website. All rights reserved.</p>
         </div>
     </footer>
-    <script src="project.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
