@@ -4,6 +4,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     line-height: 1.6;
+    background-color: #f4f4f4;
 }
 
 .container {
@@ -57,9 +58,20 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+}
+
+.service-box, .portfolio-item {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.service-box i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 form {
@@ -68,23 +80,21 @@ form {
 }
 
 form label {
-    margin-top: 1rem;
+    margin: 0.5rem 0 0.2rem;
 }
 
-form input, form textarea, form button {
-    margin-top: 0.5rem;
+form input, form textarea {
     padding: 0.5rem;
-    font-size: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 form button {
+    padding: 0.5rem;
     background-color: #333;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem;
-}
-
-form button:hover {
-    background-color: #555;
 }
