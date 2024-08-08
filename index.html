@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="project.css">
+    <title>My Professional Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>My Website</h1>
+            <h1>Bhishan Kapri</h1>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -20,19 +21,33 @@
             </nav>
         </div>
     </header>
-    
-    <section id="home">
-        <div class="container">
-            <h2>Welcome to My Website</h2>
-            <p>Your one-stop solution for amazing things.</p>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Welcome to My Professional Website</h2>
+            <p>Delivering excellence through innovation and dedication.</p>
             <a href="#contact" class="button">Get in Touch</a>
         </div>
     </section>
 
-    <section id="portfolio">
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>We are a dedicated team of professionals committed to delivering high-quality solutions. Our mission is to provide exceptional services and exceed your expectations.</p>
+                </div>
+                <div class="about-image">
+                    <img src="about.jpg" alt="About Us">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
         <div class="container">
             <h2>Portfolio</h2>
-            <div class="portfolio-gallery">
+            <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <img src="portfolio1.jpg" alt="Project 1">
                     <h3>Project Title 1</h3>
@@ -48,10 +63,10 @@
         </div>
     </section>
 
-    <section id="services">
+    <section id="services" class="services">
         <div class="container">
-            <h2>Services</h2>
-            <div class="service-list">
+            <h2>Our Services</h2>
+            <div class="services-grid">
                 <div class="service-item">
                     <h3>Service 1</h3>
                     <p>Description of service 1.</p>
@@ -65,7 +80,7 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="contact">
         <div class="container">
             <h2>Contact Us</h2>
             <form id="contactForm" action="contact.php" method="post">
@@ -86,9 +101,10 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 My Website. All rights reserved.</p>
+            <p>&copy; 2024 Bhishan Kapri. All rights reserved.</p>
         </div>
     </footer>
-    <script src="project.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
