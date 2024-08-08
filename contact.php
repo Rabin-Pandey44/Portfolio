@@ -1,16 +1,32 @@
 <?php
 // Database configuration
 $servername = 'localhost'; // Database host
+$dbname = 'my_website'; // Database name
 $username = 'root'; // MySQL username
 $password = ''; // MySQL password
 
 try {
-    // Create a new PDO instance
-    $pdo = new PDO("mysql:host=$host;$username, $password);
+    // Create a new PDO instance for connection
+    $pdo = new PDO("mysql:host=$host;charset=utf8", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-   $dbname = "CREATE DATABASE my_weebsite"
-   $conn->query($dbname)
+    // Create database if it doesn't exist
+    $pdo->exec("CREATE DATABASE IF NOT EXISTS $dbname");
+    $pdo->exec("USE $dbname");
+
+    // Create table if it doesn't exist
+    $tableQuery = "
+        CREATE TABLE IF NOT EXISTS contact_form (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR(255) NOT NULL,
+            email VARCHAR(255) NOT NULL,
+            message TEXT NOT NULL,
+            submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    ";
+    $pdo->exec($tableQuery);
+
+    // Check if form is submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Retrieve form data
         $name = htmlspecialchars(trim($_POST['name']));
@@ -47,4 +63,3 @@ try {
     // Handle connection errors
     echo "Database error: " . $e->getMessage();
 }
-?>
