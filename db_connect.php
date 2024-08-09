@@ -38,4 +38,3 @@ if ($conn->query($sql) === TRUE) {
 }
 
 // Close the connection at the end of your script
-?>
