@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - My Professional Website</title>
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <?php include 'php/header.php'; ?>
+
+    <main>
+        <section id="contact">
+            <h1>Contact Us</h1>
+            <p>If you have any questions, please feel free to contact us. We are here to help you.</p>
+
+            <form action="php/contact_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <input type="submit" value="Send">
+            </form>
+        </section>
+
+        <section id="contact-info">
+            <h2>Our Contact Information</h2>
+            <p>Phone: (123) 456-7890</p>
+            <p>Email: info@example.com</p>
+            <p>Address: 1234 Example St, City, Country</p>
+        </section>
+    </main>
+
+    <?php include 'php/footer.php'; ?>
+    <script src="js/contact.js"></script>
+</body>
+</html>
