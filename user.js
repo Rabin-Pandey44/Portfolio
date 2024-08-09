@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("User JS loaded");
-    // User-specific interactivity can go here
+// JavaScript for user page functionality
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('User JS loaded');
 });

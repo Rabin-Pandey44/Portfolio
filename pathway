@@ -1,29 +1,33 @@
-project-folder/
-│
-├── css/
-│   ├── main.css
-│   ├── about.css
-│   ├── contact.css
-│   ├── user.css
-│   └── responsive.css
-│
-├── js/
-│   ├── main.js
-│   ├── contact.js
-│   ├── user.js
-│   └── animations.js
-│
-├── php/
-│   ├── header.php
-│   ├── footer.php
-│   ├── db_connect.php
-│   ├── contact_form.php
-│   ├── user_auth.php
-│   ├── user_registration.php
-│   └── process_login.php
-│
-├── index.html
-├── about.html
-├── contact.html
-├── user.html
-└── register.html
+/project-folder
+    /css
+        main.css
+        about.css
+        contact.css
+        user.css
+        responsive.css
+    /js
+        main.js
+        contact.js
+        user.js
+        animations.js
+    /php
+        header.php
+        footer.php
+        db_connect.php
+        contact_form.php
+        user_auth.php
+        user_registration.php
+        process_login.php
+    /images
+        profile.jpg
+        project1.jpg
+        project2.jpg
+        service1.jpg
+        service2.jpg
+    index.html
+    about.html
+    contact.html
+    user.html
+    register.html
+    portfolio.html
+    services.html

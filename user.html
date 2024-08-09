@@ -3,33 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard - My Professional Website</title>
-    <link rel="stylesheet" href="user.css">
-    <link rel="stylesheet" href="responsive.css">
+    <title>User Profile | Alex Johnson</title>
+    <link rel="stylesheet" href="css/user.css">
 </head>
 <body>
     <?php include 'php/header.php'; ?>
-
     <main>
-        <section id="user-dashboard">
-            <h1>User Dashboard</h1>
-            <p>Welcome, [User's Name]. Here you can manage your account and view your activity.</p>
-
-            <h2>Account Information</h2>
-            <p>Name: [User's Name]</p>
-            <p>Email: [User's Email]</p>
-            <p>Joined: [Date]</p>
-
-            <h2>Recent Activity</h2>
-            <ul>
-                <li>Activity 1 - [Description]</li>
-                <li>Activity 2 - [Description]</li>
-                <li>Activity 3 - [Description]</li>
-            </ul>
+        <section class="user-profile">
+            <h1>User Profile</h1>
+            <p>Welcome to your profile page! Here you can view and manage your account information.</p>
+            <p><strong>Username:</strong> AlexJohnson</p>
+            <p><strong>Email:</strong> alex@example.com</p>
+            <a href="contact.html" class="btn">Contact Support</a>
         </section>
     </main>
-
     <?php include 'php/footer.php'; ?>
-    <script src="user.js"></script>
+    <script src="js/user.js"></script>
 </body>
 </html>

@@ -1,21 +1,18 @@
 <?php
-include 'db_connect.php';
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars(trim($_POST['name']));
-    $email = htmlspecialchars(trim($_POST['email']));
-    $message = htmlspecialchars(trim($_POST['message']));
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $message = htmlspecialchars($_POST['message']);
 
-    $stmt = $conn->prepare("INSERT INTO contact_form (name, email, message) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $name, $email, $message);
+    // Example of sending an email
+    $to = 'contact@alexjohnson.com';
+    $subject = 'New Contact Form Submission';
+    $body = "Name: $name\nEmail: $email\nMessage:\n$message";
+    $headers = "From: $email";
 
-    if ($stmt->execute()) {
-        echo "Thank you for your message!";
+    if (mail($to, $subject, $body, $headers)) {
+        echo "Message sent successfully.";
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Failed to send message.";
     }
-
-    $stmt->close();
 }
-
-$conn->close();

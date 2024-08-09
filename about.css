@@ -1,25 +1,18 @@
-/* About Us Page Styles */
-#about {
-    padding: 20px;
+/* About Page Styles */
+.about {
+    padding: 50px 20px;
+    text-align: center;
 }
 
-.team-member {
-    display: flex;
-    align-items: center;
+.about img {
+    border-radius: 50%;
     margin-bottom: 20px;
 }
 
-.team-member img {
-    border-radius: 50%;
-    margin-right: 15px;
-    width: 100px;
-    height: 100px;
+.about h1 {
+    margin-bottom: 20px;
 }
 
-.team-member h3 {
-    margin: 0;
-}
-
-.team-member p {
-    margin: 0;
+.about p {
+    line-height: 1.6;
 }

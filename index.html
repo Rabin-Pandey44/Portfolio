@@ -3,66 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Professional Website</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="responsive.css">
+    <title>Home | Alex Johnson</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <?php include 'php/header.php'; ?>
-
     <main>
-        <section id="hero">
-            <h1>Welcome to My Professional Website</h1>
-            <p>Your one-stop solution for [your service/product]</p>
-            <a href="about.html" class="cta-button">Learn More</a>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to My Professional Website</h1>
+                <p>Delivering cutting-edge solutions to enhance your business's digital presence.</p>
+                <a href="contact.html" class="btn">Contact Me</a>
+                <a href="about.html" class="btn">Learn More</a>
+            </div>
         </section>
-
-        <section id="services">
+        <section class="portfolio">
+            <h2>Featured Portfolio Projects</h2>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/300" alt="Website Redesign">
+                    <h3>Website Redesign</h3>
+                    <p>Transformed an outdated website into a modern, responsive platform that increased user engagement by 30%.</p>
+                    <a href="portfolio.html" class="btn">View Project</a>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/300" alt="Mobile App Development">
+                    <h3>Mobile App Development</h3>
+                    <p>Developed a high-performance mobile app with a user-friendly interface, resulting in a 25% boost in customer retention.</p>
+                    <a href="portfolio.html" class="btn">View Project</a>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/300" alt="E-commerce Solution">
+                    <h3>E-commerce Solution</h3>
+                    <p>Created a robust e-commerce platform with secure payment integration and a seamless shopping experience.</p>
+                    <a href="portfolio.html" class="btn">View Project</a>
+                </div>
+            </div>
+        </section>
+        <section class="services">
             <h2>Our Services</h2>
-            <div class="service-card">
-                <h3>Service One</h3>
-                <p>Description of service one. Highlight the benefits and features.</p>
+            <div class="service-items">
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/300" alt="SEO Optimization">
+                    <h3>SEO Optimization</h3>
+                    <p>Improve your website's search engine ranking with our comprehensive SEO strategies and techniques.</p>
+                </div>
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/300" alt="Content Marketing">
+                    <h3>Content Marketing</h3>
+                    <p>Engage your audience with high-quality content that drives traffic and boosts conversions.</p>
+                </div>
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/300" alt="Web Development">
+                    <h3>Web Development</h3>
+                    <p>Build a stunning, responsive website tailored to your business needs with our expert development services.</p>
+                </div>
+                <div class="service-item">
+                    <img src="https://via.placeholder.com/300" alt="Consulting">
+                    <h3>Consulting</h3>
+                    <p>Get professional advice and strategic planning to guide your digital transformation and achieve your goals.</p>
+                </div>
             </div>
-            <div class="service-card">
-                <h3>Service Two</h3>
-                <p>Description of service two. Explain why customers should choose this.</p>
-            </div>
-            <div class="service-card">
-                <h3>Service Three</h3>
-                <p>Description of service three. Mention any unique selling points.</p>
-            </div>
-        </section>
-
-        <section id="portfolio">
-            <h2>Our Portfolio</h2>
-            <div class="portfolio-item">
-                <img src="images/portfolio1.jpg" alt="Project 1">
-                <p>Project 1 - Brief description.</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/portfolio2.jpg" alt="Project 2">
-                <p>Project 2 - Brief description.</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/portfolio3.jpg" alt="Project 3">
-                <p>Project 3 - Brief description.</p>
-            </div>
-        </section>
-
-        <section id="testimonials">
-            <h2>Testimonials</h2>
-            <blockquote>
-                <p>"Fantastic service! Highly recommended."</p>
-                <cite>- Customer Name</cite>
-            </blockquote>
-            <blockquote>
-                <p>"The best decision we ever made. Exceptional quality."</p>
-                <cite>- Customer Name</cite>
-            </blockquote>
         </section>
     </main>
-
     <?php include 'php/footer.php'; ?>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,13 +1,19 @@
 <?php
-include 'user_auth.php';
-
+// Process login form submissions
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = htmlspecialchars(trim($_POST['email']));
-    $password = htmlspecialchars(trim($_POST['password']));
+    $username = htmlspecialchars($_POST['username']);
+    $password = htmlspecialchars($_POST['password']);
 
-    if (login($email, $password)) {
-        header("Location: user.html");
+    include 'db_connect.php';
+
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
+    $stmt->execute(['username' => $username, 'password' => $password]);
+
+    if ($stmt->rowCount() > 0) {
+        session_start();
+        $_SESSION['username'] = $username;
+        header('Location: user.html');
     } else {
-        echo "Login failed. Please check your email and password.";
+        echo "Invalid login credentials.";
     }
 }

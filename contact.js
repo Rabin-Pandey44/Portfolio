@@ -1,9 +1,13 @@
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("Contact JS loaded");
-
-    const form = document.querySelector("form");
-
-    form.addEventListener("submit", function(event) {
-        alert("Thank you for your message! We will get back to you soon.");
+// JavaScript for contact form validation or interactivity
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+        // Basic validation example
+        const name = form.querySelector('#name').value;
+        const email = form.querySelector('#email').value;
+        if (!name || !email) {
+            alert('Please fill out all fields.');
+            event.preventDefault();
+        }
     });
 });

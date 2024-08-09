@@ -3,32 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - My Professional Website</title>
-    <link rel="stylesheet" href="user.css">
-    <link rel="stylesheet" href="responsive.css">
+    <title>Register | Alex Johnson</title>
+    <link rel="stylesheet" href="css/user.css">
 </head>
 <body>
     <?php include 'php/header.php'; ?>
-
     <main>
-        <section id="register">
+        <section class="user-registration">
             <h1>Register</h1>
             <form action="php/user_registration.php" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-
+                
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
-
-                <input type="submit" value="Register">
+                
+                <button type="submit">Register</button>
             </form>
         </section>
     </main>
-
     <?php include 'php/footer.php'; ?>
-    <script src="user.js"></script>
+    <script src="js/user.js"></script>
 </body>
 </html>
