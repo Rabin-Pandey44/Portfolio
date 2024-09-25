@@ -1,10 +1,26 @@
-// js script for contact form
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
+// Preloader functionality
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    setTimeout(() => {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 1000);
+    }, 2000);
+});
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+// Smooth scrolling for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
-    alert(`Thank you, ${name}! We have received your message.`);
+// Form submission handler
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Your message has been sent!');
 });
