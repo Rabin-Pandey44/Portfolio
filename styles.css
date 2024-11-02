@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: rgb(40,50,80);
     color: #333;
     line-height: 1.6;
 }
@@ -42,7 +42,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background-color: black;
+    background-color: gray;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -68,7 +68,7 @@ nav ul li a:hover {
     text-decoration: none;
     font-size: 1.2rem;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.5s;
 }
 
 .hero .btn:hover {
