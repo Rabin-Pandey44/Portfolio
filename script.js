@@ -22,5 +22,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Form submission handler
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
-    alert('Your message has been sent!');
+    const formData = new FormData(this);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+    alert(`Thank you, ${name}! Your message has been sent from ${email} with the following message: ${message}`);
+});
+
+// Mobile navigation toggle
+document.getElementById('nav-toggle').addEventListener('click', function() {
+    const nav = document.getElementById('nav');
+    nav.classList.toggle('open');
+});
+
+// Scroll to top button
+document.getElementById('scroll-to-top').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Animate elements on scroll
+const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+window.addEventListener('scroll', function() {
+    elementsToAnimate.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            element.classList.add('animate');
+        } else {
+            element.classList.remove('animate');
+        }
+    });
 });
