@@ -46,6 +46,10 @@ nav ul li a:hover {
 }
 
 /* Hero Section */
+.feature-block{
+    display: block;
+    justify-content: center;
+    background-image: -moz-radial-gradient(center center, ellipse cover, #f9f9f9 0%, #f9f9f9 100%);
 .hero {
     background-image: linear-gradient(to bottom, #333, #555);
     height: 100vh;
