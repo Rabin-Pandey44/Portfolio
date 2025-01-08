@@ -3,135 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome | Rabin Pandey</title>
+    <meta name="description" content="Rabin Pandey's professional website showcasing his skills, blogs, and motivation.">
+    <meta name="keywords" content="Rabin Pandey, Web Developer, Blogs, Portfolio, Motivation, Contact">
+    <meta name="author" content="Rabin Pandey">
+    <title>Rabin Pandey | Web Developer</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
 <body>
-    <!-- Main Content -->
     <header>
         <nav>
-            <ul>
+            <div class="logo">Rabin Pandey</div>
+            <button id="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
+            <ul id="nav-menu">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#knowledge">That Motivated Me</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#motivation">Motivation</a></li>
                 <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home">
-            <div class="hero">
-                <h1>Welcome to My Workshop</h1>
-                <p>A place where passion meets knowledge</p>
-                <a href="#about" class="btn">Discover More</a>
-            </div>
-            <div class="feature-block">
-                <h2>What I Do</h2>
-                <p>I'm a web developer with a passion for creating innovative and user-friendly websites.</p>
-                <img src="C:\xampp\htdocs\rabinpande\web dev.jpg" alt="Web Development Image" aria-label="Image of web development">
-            </div>
+        <!-- Home Section -->
+        <section id="home" class="hero">
+            <h1>Welcome to My World</h1>
+            <p>Innovating one line of code at a time.</p>
+            <a href="#about" class="btn">Learn More</a>
         </section>
 
-        <section id="about" class="content-section">
+        <!-- About Section -->
+        <section id="about">
             <h2>About Me</h2>
-            <p>I'm Rabin Pandey, a passionate learner exploring the world of web development. This website is a showcase of my journey and knowledge.</p>
-            <img src="C:\xampp\htdocs\rabinpande\dev.jpg" alt="Developer Image" aria-label="Image of a developer learning">
+            <p>I am Rabin Pandey, a passionate web developer skilled in creating innovative websites.</p>
+            <img src="https://source.unsplash.com/400x300/?developer,technology" alt="Web Developer at Work">
         </section>
 
-        <section id="knowledge" class="content-section">
+        <!-- Motivation Section -->
+        <section id="motivation">
             <h2>Motivational Thoughts</h2>
-            <div class="knowledge-card">
-                <h3>Failure is the Stepping Stone to Success</h3>
-                <p>
-                    Every successful person has experienced failure at some point in their journey. The difference is how they’ve handled it. 
-                    You can let failure define you, or you can let it fuel your ambition. Each setback is an opportunity to grow, to learn, 
-                    and to come back stronger. Don't be afraid to take risks, to try, to fail. The greatest accomplishments are born from the 
-                    ashes of failure.
-                </p>
-                <p>
-                    Remember, success isn’t about never falling down, it’s about always getting back up. Stay persistent, stay motivated, and 
-                    keep moving forward no matter what.
-                </p>
-                <img src="https://source.unsplash.com/600x400/?motivation,success" alt="Motivation Image" aria-label="Image of motivation">
-            </div>
-            <div class="knowledge-card">
-                <h3>Dream Big, Work Hard</h3>
-                <p>
-                    Dreaming is where it all begins. Every innovation, every breakthrough, every achievement starts as an idea in someone's mind. 
-                    But dreaming is only the beginning. It's the hard work, the dedication, the late nights, and the persistence that bring 
-                    dreams to life. If you're willing to put in the work, nothing is out of reach.
-                </p>
-                <p>
-                    Set goals, stay focused, and work relentlessly toward them. The road may not be easy, but the rewards will be worth it.
-                </p>
-                <img src="C:\xampp\htdocs\rabinpande\motivation.jpg" alt="Hard Work Image" aria-label="Image of hard work">
-            </div>
+            <article>
+                <h3>Failure Leads to Success</h3>
+                <p>Each setback is a setup for a comeback.</p>
+                <img src="https://source.unsplash.com/400x300/?success,motivation" alt="Motivation Image">
+            </article>
         </section>
 
-        <section id="contact" class="content-section">
+        <!-- Blog Section -->
+        <section id="blog">
+            <h2>Blog</h2>
+            <article>
+                <h3>The Future of AI</h3>
+                <p>AI is reshaping the world...</p>
+                <button class="read-more" data-content="ai">Read More</button>
+            </article>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
             <h2>Contact Me</h2>
-            <p>Feel free to reach out to me through email or social media.</p>
-            <form id="contact-form">
-                <input type="text" placeholder="Name" required aria-label="Name input field">
-                <input type="email" placeholder="Email" required aria-label="Email input field">
-                <textarea placeholder="Message" required aria-label="Message input field"></textarea>
+            <form>
+                <label for="name">Name:</label>
+                <input id="name" type="text" placeholder="Your Name" required>
+                <label for="email">Email:</label>
+                <input id="email" type="email" placeholder="Your Email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send</button>
             </form>
         </section>
+    </main>
 
-        <section id="blog" class="content-section">
-            <h2>My Blog</h2>
-            <ul class="blog-posts">
-                <li>
-                    <h3>The Future of Artificial Intelligence</h3>
-                    <p>
-                        Artificial intelligence (AI) has been rapidly advancing in recent years, transforming numerous industries and aspects of our lives. From virtual assistants like Siri and Alexa to self-driving cars and personalized product recommendations, AI is becoming increasingly ubiquitous.
-                    </p>
-                    <p>
-                        As AI continues to evolve, it's likely to have a profound impact on the way we live and work. For instance, AI-powered robots may revolutionize manufacturing and logistics, while AI-driven healthcare systems could lead to more accurate diagnoses and effective treatments.
-                    </p>
-                    <a href="#" class="btn">Read More</a>
-                    </li>
-                    <li>
-                        <h3>The Dark Side of Technology: How Pollution is Affecting Our Planet</h3>
-                        <p>
-                            The rapid growth of technology has brought numerous benefits, but it also has a significant environmental cost. The production and disposal of electronic devices, for example, contribute to pollution and waste, harming our planet and its inhabitants.
-                        </p>
-                        <p>
-                            It's essential to acknowledge the impact of technology on the environment and take steps to mitigate it. This can include adopting sustainable practices, such as recycling and reducing energy consumption, and supporting companies that prioritize environmental responsibility.
-                        </p>
-                        <a href="#" class="btn">Read More</a>
-                    </li>
-                    <li>
-                        <h3>Understanding Human Behavior: The Psychology of Decision-Making</h3>
-                        <p>
-                            Human behavior is complex and influenced by a multitude of factors, including emotions, experiences, and social norms. Understanding these factors can help us make better decisions and improve our relationships with others.
-                        </p>
-                        <p>
-                            By recognizing the psychological biases and heuristics that shape our behavior, we can develop strategies to overcome them and make more informed choices. This can lead to improved outcomes in various areas of life, from personal finance to relationships and career development.
-                        </p>
-                        <a href="#" class="btn">Read More</a>
-                    </li>
-                    <li>
-                        <h3>The Ethics of Emerging Technologies: A Discussion on AI, Robotics, and Biotechnology</h3>
-                        <p>
-                            Emerging technologies like AI, robotics, and biotechnology are transforming numerous industries and aspects of our lives. However, they also raise important ethical questions about their development and application.
-                        </p>
-                        <p>
-                            It's essential to consider the potential consequences of these technologies and ensure that they are developed and used responsibly. This includes addressing concerns around privacy, security, and job displacement, as well as promoting transparency and accountability in the development process.
-                        </p>
-                    <a href="#" class="btn">Read More</a>
-                </li>
-                </ul>
-            </section>
-        </main>
-                    
-        <footer>
-            <p>&copy; 2024 Rabin Pandey. All rights reserved.</p>
-        </footer>
-    </body>
+    <footer>
+        <p>&copy; 2025 Rabin Pandey. All Rights Reserved.</p>
+    </footer>
+</body>
 </html>
