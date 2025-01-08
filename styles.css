@@ -53,22 +53,9 @@ nav ul li a:hover {
 .feature-block {
     display: flex;
     align-items: center;
+    background-image: url("https://cdn.prod.website-files.com/659f77ad8e06050cc27ed531/65ef63f6bd30ab838939a4ae_Developer%20productivity%20tools%202024.webp")
+
   }
-  
-  .image1 {
-    flex: 1;
-    margin-right: 20px;
-  }
-  
-  .text1 {
-    flex: 2;
-  }
-  
-  .separator {
-    border-left: 2px solid #000;
-    height: 100%;
-    margin-left: 20px;
-  }  
   
 .hero {
     background-image: linear-gradient(to bottom, #333, #555);
