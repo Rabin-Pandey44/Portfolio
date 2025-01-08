@@ -50,11 +50,20 @@ nav ul li a:hover {
 }
 
 /* Hero Section */
-.feature-block{
-    display: block;
-    justify-content: center;
-}
-
+.feature-block {
+    display: flex;
+    align-items: center;
+  }
+  
+  .image1 {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .text1 {
+    flex: 2;
+  }
+  
 .hero {
     background-image: linear-gradient(to bottom, #333, #555);
     height: 100vh;
