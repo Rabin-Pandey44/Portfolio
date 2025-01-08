@@ -64,6 +64,12 @@ nav ul li a:hover {
     flex: 2;
   }
   
+  .separator {
+    border-left: 2px solid #000;
+    height: 100%;
+    margin-left: 20px;
+  }  
+  
 .hero {
     background-image: linear-gradient(to bottom, #333, #555);
     height: 100vh;
