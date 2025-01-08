@@ -1,58 +1,54 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Mobile Navigation Toggle
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("nav-menu");
+// Preloader functionality
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    setTimeout(() => {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 1000);
+    }, 2000);
+});
 
-    menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
-    });
-
-    // Smooth Scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute("href"));
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-        });
-    });
-
-    // Dynamic Read More Content
-    const readMoreData = {
-        ai: "Artificial Intelligence (AI) is transforming industries, enhancing productivity, and changing the way we live. From smart assistants to self-driving cars, AI continues to innovate.",
-        tech: "The rapid advancement of technology has both positive and negative impacts on our planet. Embracing sustainable practices is crucial for a better future.",
-    };
-
-    document.querySelectorAll(".read-more").forEach(button => {
-        button.addEventListener("click", () => {
-            const contentKey = button.getAttribute("data-content");
-            const parentArticle = button.parentElement;
-
-            if (contentKey in readMoreData) {
-                const additionalContent = document.createElement("p");
-                additionalContent.textContent = readMoreData[contentKey];
-                additionalContent.classList.add("additional-content");
-                parentArticle.appendChild(additionalContent);
-                button.remove();
-            }
-        });
-    });
-
-    // Form Submission Alert
-    const form = document.querySelector("form");
-    form.addEventListener("submit", (e) => {
+// Smooth scrolling for nav links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
-        if (name && email && message) {
-            alert(`Thank you, ${name}! Your message has been sent successfully.`);
-            form.reset();
+// Form submission handler
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+    alert(`Thank you, ${name}! Your message has been sent from ${email} with the following message: ${message}`);
+});
+
+// Mobile navigation toggle
+document.getElementById('nav-toggle').addEventListener('click', function() {
+    const nav = document.getElementById('nav');
+    nav.classList.toggle('open');
+});
+
+// Scroll to top button
+document.getElementById('scroll-to-top').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Animate elements on scroll
+const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+window.addEventListener('scroll', function() {
+    elementsToAnimate.forEach(element => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            element.classList.add('animate');
         } else {
-            alert("Please fill in all the fields.");
+            element.classList.remove('animate');
         }
     });
 });
