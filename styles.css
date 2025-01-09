@@ -11,6 +11,7 @@ body {
     color: #333;
     line-height: 1.6;
     transition: background-color 0.5s;
+    overflow: hidden;
 }
 
 /* Nav Bar */
@@ -74,11 +75,11 @@ nav ul li a:hover {
 
 /* Content Sections */
 .content-section {
-    padding: 4rem;
+    padding: 1rem;
     text-align: center;
     color: black;
     margin-bottom: 2rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(236, 232, 232, 0.1);
     background-image: url(https://cdn.prod.website-files.com/659f77ad8e06050cc27ed531/65ef63f6bd30ab838939a4ae_Developer%20productivity%20tools%202024.webp);
 }
 
@@ -96,9 +97,6 @@ nav ul li a:hover {
 /* Hero Section */
 .feature-block {
     display: block;
-    padding-top: 25px;
-    padding-right: 25px;
-    padding-left: 25px;
     color: white;
     text-align: center;
     font-weight: bold;
@@ -203,8 +201,9 @@ nav ul li a:hover {
 }
 
 .blog-posts li {
-    margin: 2rem;
-    padding: 2rem;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+    margin-bottom: 3rem;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -388,5 +387,4 @@ footer {
     100% {
         opacity: 1;
     }
-}
 }
