@@ -19,6 +19,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Get all the "Read More" buttons
+const readMoreButtons = document.querySelectorAll('.read-more-btn');
+
+// Add an event listener to each "Read More" button
+readMoreButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent the default action of the link
+        const moreText = this.previousElementSibling; // Get the adjacent 'more-text' paragraph
+        const isHidden = moreText.style.display === 'none';
+
+        if (isHidden) {
+            // Show the hidden content
+            moreText.style.display = 'block';
+            this.textContent = 'Read Less'; // Change button text to 'Read Less'
+        } else {
+            // Hide the content again
+            moreText.style.display = 'none';
+            this.textContent = 'Read More'; // Change button text back to 'Read More'
+        }
+    });
+});
+
 // Form submission handler
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();

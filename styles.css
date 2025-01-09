@@ -161,19 +161,38 @@ nav ul li a:hover {
     background-color: #333;
 }
 
-.knowledge-card {
-    background-color: #f9f9f9;
+.knowledge-card{
+    background-image: url(images/motivation.jpg);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.95);
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    z-index: 1;
     padding: 2rem;
     margin: 2rem 0;
+    border: none;
+    filter: brightness(100%);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-image: url(images/motivation.jpg);
+}
+.knowledge-card::before{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: inherit;
+    background-position: inherit;
+    background-size: inherit;
+    filter: blur(3px);
 }
 
 .knowledge-card h3 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #333;
+    color: #fffefe;
 }
 
 /* Blog Section */
@@ -200,6 +219,19 @@ nav ul li a:hover {
 .blog-posts li p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
+}
+
+.read-more-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.read-more-btn:hover {
+    background-color: rgb(216, 99, 31);
 }
 
 /* Contact Section */
@@ -355,5 +387,11 @@ footer {
     }
     100% {
         opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-posts li {
+        width: 100%; /* Make the blog posts take up full width on smaller screens */
     }
 }
