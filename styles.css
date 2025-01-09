@@ -389,9 +389,4 @@ footer {
         opacity: 1;
     }
 }
-
-@media (max-width: 768px) {
-    .blog-posts li {
-        width: 100%; /* Make the blog posts take up full width on smaller screens */
-    }
 }
