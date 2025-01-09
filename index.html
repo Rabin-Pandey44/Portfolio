@@ -7,22 +7,28 @@
     <meta name="keywords" content="Rabin Pandey, Web Developer, Blogs, Portfolio, Motivation, Contact">
     <meta name="author" content="Rabin Pandey">
     <title>Rabin Pandey | Web Developer</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
     <!-- Main Content -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#knowledge">That Motivated Me</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#blog">Blog</a></li>
-            </ul>
-        </nav>
-    </header>
+   <header>
+    <nav>
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="C:\xampp\htdocs\rabinpande\logo.jpg" alt="Logo" />
+            <h1>Rabin Pandey</h1>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#knowledge">That Motivated Me</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#blog">Blog</a></li>
+        </ul>
+    </nav>
+   </header>
+
 
     <main>
         <section id="home">
@@ -31,15 +37,26 @@
                 <p>A place where passion meets knowledge</p>
                 <a href="#about" class="btn">Discover More</a>
             </div>
-            <div class="feature-block">
-                <h2>What I Do</h2>
-                <p class="text1">I'm a web developer with a passion for creating innovative and user-friendly websites.</p>            </div>
-        </section>
-
+       </section>
         <section id="about" class="content-section">
-            <h2>About Me</h2>
-            <p>I'm Rabin Pandey, a passionate learner exploring the world of web development. This website is a showcase of my journey and knowledge.</p>
-            <img src="https://iconduck.com/illustrations/106905/web-developer" height="200px" width="250px" alt="Developer Image" aria-label="Image of a developer learning">
+	<h2>About Me</h2>
+	<p class="about">I'm <kbd>Rabin Pandey</kbd>, a passionate learner exploring the world of web development. This website is a showcase of my journey and knowledge.</p>
+              <div class="feature-block">
+	<h3 class="whatido">What I Do</h3>
+	<br>
+                 <p class="text1">I'm a web developer with a passion for creating innovative and user-friendly websites. I am currently learning full stack development and no doubt, I am enjoying it. Currently this website doesn't have many funcionality but after some time I will update it to the best version. Hope you guys will give me feedback about the improvement areas..
+	<br><br>I want help on these topics, I hope you guys will suggest me.
+	<br><br>
+	<em class="wido" >
+	SEO optimization<br>
+	Functionalities<br>
+	CSS/ Theme update<br>
+	Errors that you faced<br>
+	Improvement ideas
+	</em>
+	<br><br><br><br><br><br>
+	</p>
+              </div>
         </section>
 
         <section id="knowledge" class="content-section">
@@ -56,7 +73,6 @@
                     Remember, success isn’t about never falling down, it’s about always getting back up. Stay persistent, stay motivated, and 
                     keep moving forward no matter what.
                 </p>
-                <img src="https://source.unsplash.com/600x400/?motivation,success" alt="Motivation Image" aria-label="Image of motivation">
             </div>
             <div class="knowledge-card">
                 <h3>Dream Big, Work Hard</h3>
@@ -68,19 +84,7 @@
                 <p>
                     Set goals, stay focused, and work relentlessly toward them. The road may not be easy, but the rewards will be worth it.
                 </p>
-                <img src="https://mindhealth.com.au/services/motivation/" alt="Hard Work Image" aria-label="Image of hard work">
             </div>
-        </section>
-
-        <section id="contact" class="content-section">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out to me through email or social media.</p>
-            <form id="contact-form">
-                <input type="text" placeholder="Name" required aria-label="Name input field">
-                <input type="email" placeholder="Email" required aria-label="Email input field">
-                <textarea placeholder="Message" required aria-label="Message input field"></textarea>
-                <button type="submit">Send</button>
-            </form>
         </section>
 
         <section id="blog" class="content-section">
@@ -91,10 +95,10 @@
                     <p>
                         Artificial intelligence (AI) has been rapidly advancing in recent years, transforming numerous industries and aspects of our lives. From virtual assistants like Siri and Alexa to self-driving cars and personalized product recommendations, AI is becoming increasingly ubiquitous.
                     </p>
-                    <p>
+                    <p id="">
                         As AI continues to evolve, it's likely to have a profound impact on the way we live and work. For instance, AI-powered robots may revolutionize manufacturing and logistics, while AI-driven healthcare systems could lead to more accurate diagnoses and effective treatments.
                     </p>
-                    <a href="#" class="btn">Read More</a>
+                    <a href="" class="btn">Read More</a>
                     </li>
                     <li>
                         <h3>The Dark Side of Technology: How Pollution is Affecting Our Planet</h3>
@@ -128,6 +132,28 @@
                 </li>
                 </ul>
             </section>
+       
+<section id="contact" class="content-section">
+    <h2>Contact Me</h2>
+    <em style="color: white; font-weight: bold;">Feel free to reach out to me through email or social media.</em>
+    <form id="contact-form">
+        <input type="text" placeholder="Name" required aria-label="Name input field">
+        <input type="email" placeholder="Email" required aria-label="Email input field">
+        <textarea placeholder="Message" required aria-label="Message input field"></textarea>
+        <button type="submit">Send</button>
+    </form>
+
+    <!-- Social Media Links -->
+    <div id="social-media">
+        <a href="https://www.facebook.com/profile.php?id=100090425045905" target="_blank" aria-label="Facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Facebook_icon.svg" alt="Facebook Logo">
+        </a>
+        <a href="https://www.instagram.com/pandey_yay" target="_blank" aria-label="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+        </a>
+    </div>
+</section>
+
         </main>
                     
         <footer>
