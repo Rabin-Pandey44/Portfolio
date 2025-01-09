@@ -1,4 +1,12 @@
 /* Global Styles */
+:root {
+    --primary-color: #333;
+    --secondary-color: #f04;
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --white-color: #fff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,16 +15,16 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
     line-height: 1.6;
     transition: background-color 0.5s;
 }
 
 /* Nav Bar */
 header {
-    background-color: #333;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     padding: 0.5rem 10%;
     position: sticky;
     top: 0;
@@ -30,7 +38,6 @@ nav {
     align-items: center;
 }
 
-/* Logo Styling */
 .logo {
     display: flex;
     align-items: center;
@@ -46,15 +53,12 @@ nav {
 .logo h1 {
     font-size: 1.5rem;
     font-weight: bold;
-    color: white;
+    color: var(--white-color);
 }
 
-/* Navigation Links */
 nav ul {
     list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
 }
 
 nav ul li {
@@ -63,20 +67,20 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: var(--white-color);
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #f04;
+    color: var(--secondary-color);
 }
 
 /* Content Sections */
 .content-section {
     padding: 4rem;
     text-align: center;
-    color: black;
+    color: var(--text-color);
     margin-bottom: 2rem;
     box-shadow: 0 0 10px rgba(236, 232, 232, 0.1);
     background-image: url(https://cdn.prod.website-files.com/659f77ad8e06050cc27ed531/65ef63f6bd30ab838939a4ae_Developer%20productivity%20tools%202024.webp);
@@ -85,51 +89,47 @@ nav ul li a:hover {
 .content-section h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: white;
+    color: var(--white-color);
 }
 
 .about {
-   color: white;
-   font-weight: bold;
-  }
+    color: var(--white-color);
+    font-weight: bold;
+}
 
-/* Hero Section */
 .feature-block {
     display: block;
-    color: white;
+    color: var(--white-color);
     text-align: center;
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.15);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     filter: brightness(95%);
-  }
+}
 
 .whatido {
     background-color: rgba(0, 0, 10, 0.3);
-    border: 1px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
     height: 50px;
     width: 150px;
     border-radius: 5px;
-  }
+}
 
 .wido {
-   font-style: italic;
-   color: rgb(255, 255, 255);
-   font-family: 'Arial', sans-serif;
-   
-  }
-  
+    font-style: italic;
+    color: var(--white-color);
+    font-family: 'Arial', sans-serif;
+}
+
 .hero {
-    background-image: linear-gradient(to bottom, #333, #555);
+    background-image: linear-gradient(to bottom, var(--primary-color), #555);
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
+    color: var(--white-color);
 }
 
 .hero h1 {
@@ -145,8 +145,8 @@ nav ul li a:hover {
 
 .hero .btn {
     padding: 1rem 2rem;
-    background-color: #f04;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
     text-decoration: none;
     font-size: 1.2rem;
     border-radius: 5px;
@@ -155,12 +155,12 @@ nav ul li a:hover {
 }
 
 .hero .btn:hover {
-    background-color: #333;
+    background-color: var(--primary-color);
 }
 
-.knowledge-card{
+.knowledge-card {
     background-image: url(images/motivation.jpg);
-    color: white;
+    color: var(--white-color);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.95);
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -172,7 +172,8 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.knowledge-card::before{
+
+.knowledge-card::before {
     content: "";
     z-index: -1;
     position: absolute;
@@ -189,7 +190,7 @@ nav ul li a:hover {
 .knowledge-card h3 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #fffefe;
+    color: var(--white-color);
 }
 
 /* Blog Section */
@@ -200,10 +201,9 @@ nav ul li a:hover {
 }
 
 .blog-posts li {
-    padding-bottom: 1rem;
-    padding-top: 2rem;
+    padding: 2rem 1rem;
     margin-bottom: 3rem;
-    background-color: white;
+    background-color: var(--white-color);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -211,7 +211,7 @@ nav ul li a:hover {
 .blog-posts li h3 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #333;
+    color: var(--text-color);
 }
 
 .blog-posts li p {
@@ -220,8 +220,8 @@ nav ul li a:hover {
 }
 
 .read-more-btn {
-    background-color: #333;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -244,15 +244,15 @@ nav ul li a:hover {
 
 #contact-form button {
     padding: 1rem 2rem;
-    background-color: #333;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 #contact-form button:hover {
-    background-color: #f04;
+    background-color: var(--secondary-color);
 }
 
 /* Social Media Links */
@@ -281,8 +281,8 @@ nav ul li a:hover {
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #333;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white-color);
     bottom: 0;
     width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -293,14 +293,14 @@ footer p {
 }
 
 footer a {
-    color: white;
+    color: var(--white-color);
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s;
 }
 
 footer a:hover {
-    color: #f04;
+    color: var(--secondary-color);
 }
 
 /* Animations */
@@ -388,17 +388,34 @@ footer {
     }
 }
 
-/*media query for mobile devices*/
-@media (orientation: landscape) {
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
     body {
-        padding: 0 20px;
+        padding: 0 10px;
     }
 
     .container {
-        max-width: 90%;
+        max-width: 100%;
     }
 
-    h1, h2, h3, p {
-        font-size: 1.2rem;
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .blog-posts li {
+        padding: 1rem;
+        margin-bottom: 1rem;
     }
 }
