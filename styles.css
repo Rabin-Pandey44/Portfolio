@@ -384,7 +384,7 @@ footer {
 
 /* Media Queries */
 /* Adjust styles for devices with a maximum width of 1000px */
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     .logo img {
         width: 2rem;
         height: 2rem;
@@ -428,7 +428,7 @@ footer {
     }
 
     .blog-posts li {
-        flex: 1 1 calc(100% - 2rem);
+        flex: 1 1 calc(100% - 1rem);
     }
 
     footer p,
