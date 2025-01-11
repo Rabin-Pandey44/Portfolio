@@ -2,15 +2,15 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f9f9f9;
     color: #333;
-    line-height: 1.6;
     transition: background-color 0.5s;
-    padding: 1rem;
+    overflow-x: hidden;
 }
 
 header {
@@ -397,10 +397,6 @@ footer {
         margin-left: 0.5rem;
     }
 
-    .content-section {
-        padding: 1rem;
-    }
-
     .content-section h2 {
         font-size: 1.5rem;
     }
@@ -414,12 +410,7 @@ footer {
     }
 
     .hero .btn {
-        padding: 0.5rem 1rem;
         font-size: 0.8rem;
-    }
-
-    .knowledge-card {
-        padding: 1rem;
     }
 
     .knowledge-card h3 {
@@ -434,5 +425,4 @@ footer {
     footer a {
         font-size: 0.8rem;
     }
-}
 }
