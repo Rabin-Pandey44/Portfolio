@@ -2,8 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-box-sizing: content-box;
+    box-sizing: content-box;
 
 body {
     font-family: 'Arial', sans-serif;
@@ -383,8 +382,8 @@ footer {
 }
 
 /* Media Queries */
-/* Adjust styles for devices with a maximum width of 1000px */
-@media (max-width: 1200px) {
+/* Adjust styles for devices with a maximum width of 768px */
+@media (max-width: 768px) {
     .logo img {
         width: 2rem;
         height: 2rem;
