@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+box-sizing: content-box;
 
 body {
     font-family: 'Arial', sans-serif;
@@ -76,7 +76,7 @@ nav ul li a:hover {
     color: black;
     margin-bottom: 2rem;
     box-shadow: 0 0 10px rgba(236, 232, 232, 0.1);
-    background-image: url(https://cdn.prod.website-files.com/659f77ad8e06050cc27ed531/65ef63f6bd30ab838939a4ae_Developer%20productivity%20tools%202024.webp);
+    background-image: url(https://cdn.prod.website-files.com/659f77ad8e06050cc27ed531/65ef63f6bd30ab838939a4ae_Developer%20productivity%20tools%202024-small.webp);
     background-size: cover;
     background-position: center;
 }
@@ -104,7 +104,7 @@ nav ul li a:hover {
 
 .whatido {
     background-color: rgba(0, 0, 10, 0.3);
-    border: 1px;
+    border: 1px solid #000;
     padding: 0.5rem;
     height: 3rem;
     width: 10rem;
@@ -383,7 +383,8 @@ footer {
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
+/* Adjust styles for devices with a maximum width of 1000px */
+@media (max-width: 1000px) {
     .logo img {
         width: 2rem;
         height: 2rem;
@@ -434,4 +435,5 @@ footer {
     footer a {
         font-size: 0.8rem;
     }
+}
 }
