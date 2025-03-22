@@ -59,27 +59,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Dynamic Quotes
-const quotes = [
-    "Started from the bottom now we're here",
-    "Hustle harder than your excuses",
-    "Code like it's your last commit",
-    "Build empires, not just websites",
-    "If it was easy, everyone would do it",
-    "Start where you are, Use what you have, Do what you can",
-    "The only place success comes before work is in the dictionary",
-    "The best way to predict the future is to create it",
-    "Reminder: I'm not bossy, I just have better ideas",
-    "The expert in anything was once a beginner",
-    "Don't stop until you're proud",
-    "The only limit is your mind",
-    "Don't get too serious, enjoy the journey"
-];
+document.addEventListener('DOMContentLoaded', () => {
+    const quotes = [
+        "Started from the bottom now we're here",
+        "Hustle harder than your excuses",
+        "Code like it's your last commit",
+        "Build empires, not just websites",
+        "If it was easy, everyone would do it",
+        "Start where you are, Use what you have, Do what you can",
+        "The only place success comes before work is in the dictionary",
+        "The best way to predict the future is to create it",
+        "Reminder: I'm not bossy, I just have better ideas",
+        "The expert in anything was once a beginner",
+        "Don't stop until you're proud",
+        "The only limit is your mind",
+        "Don't get too serious, enjoy the journey"
+    ];
+    let currentQuote = 0;
+    const quoteDisplay = document.getElementById('current-quote');
 
-document.getElementById('new-quote').addEventListener('click', () => {
-    const quoteDisplay = document.getElementById('quote-display');
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    quoteDisplay.textContent = `"${quotes[randomIndex]}"`;
-});
+    function updateQuote() {
+        quoteDisplay.style.opacity = 0;
+        setTimeout(() => {
+            currentQuote = (currentQuote + 1) % quotes.length;
+            quoteDisplay.textContent = quotes[currentQuote];
+            quoteDisplay.style.opacity = 1;
+        }, 500);
+    }
+
+    // Initial quote display
+    quoteDisplay.textContent = quotes[currentQuote];
+    setInterval(updateQuote, 5000);
+    }
+);
 
 // Form Submission
 document.getElementById('main-form').addEventListener('submit', (e) => {
