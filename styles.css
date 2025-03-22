@@ -139,6 +139,7 @@ body {
     text-align: center;
     position: relative;
     z-index: 1;
+    margin-left: 10px;
 }
 
 .tagline {
@@ -584,7 +585,7 @@ input, textarea {
 @media (max-width: 768px) {
     .graffiti-nav {
         flex-direction: column;
-        padding: 1rem;
+        
     }
 
     .nav-items {
