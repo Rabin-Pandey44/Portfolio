@@ -1,76 +1,107 @@
-// Preloader functionality
+// Loading Screen
 window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
+    const loader = document.querySelector('.loader');
+    loader.style.opacity = '0';
     setTimeout(() => {
-        preloader.style.opacity = '0';
+        loader.style.display = 'none';
+    }, 500);
+});
+
+// Dynamic Track Display
+document.addEventListener('DOMContentLoaded', () => {
+    const tracks = [
+        "Kendrick Lamar - HUMBLE",
+        "Jay-Z - Empire State of Mind",
+        "Eminem - Lose Yourself",
+        "Divine - Kohinoor",
+        "Drake - God's Plan",
+        "Post Malone - Circles",
+        "Kanye West - Stronger",
+        "J. Cole - No Role Modelz",
+        "Travis Scott - SICKO MODE",
+        "Lil Wayne - A Milli",
+        "Cardi B - Bodak Yellow",
+        "50 Cent - In Da Club",
+        "Yama Buddha - Saathi",
+        "Mc Flo - Aawaj",
+        "Yama Buddha - Ma Futchhhu Tara Jhukdina",
+        "Drake - Nonstop",
+        "Dr Dre - The Next Episode",
+        "Outkast - Ms. Jackson",
+        "Lil Nas X - Old Town Road",
+        "Kendrick Lamar - DNA",
+        "XxxTentacion - SAD!",
+        "Dax - Lonely Dirt Road",
+        "Ice Cube - It Was A Good Day",
+        "Akon - Smack That",
+        "Wiz Khalifa - Black and Yellow",
+        "Snoop Dogg - Drop It Like It's Hot",
+        "2PAC - All Eyez On Me",
+        "Snoop Dogg - Gin and Juice"
+    ];
+
+    let currentTrack = 0;
+    const trackDisplay = document.getElementById('current-track');
+    
+    function updateTrack() {
+        trackDisplay.style.opacity = 0;
         setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 1000);
-    }, 2000);
+            currentTrack = (currentTrack + 1) % tracks.length;
+            trackDisplay.textContent = tracks[currentTrack];
+            trackDisplay.style.opacity = 1;
+        }, 500);
+    }
+    
+    // Initial track display
+    trackDisplay.textContent = tracks[currentTrack];
+    setInterval(updateTrack, 5000);
 });
 
-// Smooth scrolling for nav links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+
+// Dynamic Quotes
+const quotes = [
+    "Started from the bottom now we're here",
+    "Hustle harder than your excuses",
+    "Code like it's your last commit",
+    "Build empires, not just websites",
+    "If it was easy, everyone would do it",
+    "Start where you are, Use what you have, Do what you can",
+    "The only place success comes before work is in the dictionary",
+    "The best way to predict the future is to create it",
+    "Reminder: I'm not bossy, I just have better ideas",
+    "The expert in anything was once a beginner",
+    "Don't stop until you're proud",
+    "The only limit is your mind",
+    "Don't get too serious, enjoy the journey"
+];
+
+document.getElementById('new-quote').addEventListener('click', () => {
+    const quoteDisplay = document.getElementById('quote-display');
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    quoteDisplay.textContent = `"${quotes[randomIndex]}"`;
 });
 
-// Get all the "Read More" buttons
-const readMoreButtons = document.querySelectorAll('.read-more-btn');
-
-// Add an event listener to each "Read More" button
-readMoreButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent the default action of the link
-        const moreText = this.previousElementSibling; // Get the adjacent 'more-text' paragraph
-        const isHidden = moreText.style.display === 'none';
-
-        if (isHidden) {
-            // Show the hidden content
-            moreText.style.display = 'block';
-            this.textContent = 'Read Less'; // Change button text to 'Read Less'
-        } else {
-            // Hide the content again
-            moreText.style.display = 'none';
-            this.textContent = 'Read More'; // Change button text back to 'Read More'
-        }
-    });
-});
-
-// Form submission handler
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+// Form Submission
+document.getElementById('main-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    const formData = new FormData(this);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const message = formData.get('message');
-    alert(`Thank you, ${name}! Your message has been sent from ${email} with the following message: ${message}`);
+    alert('Project Launched! Let\'s build something great \u{1F680}');
+    e.target.reset();
 });
 
-// Mobile navigation toggle
-document.getElementById('nav-toggle').addEventListener('click', function() {
-    const nav = document.getElementById('nav');
-    nav.classList.toggle('open');
-});
+// Scroll Animation
+const observerOptions = {
+    threshold: 0.1
+};
 
-// Scroll to top button
-document.getElementById('scroll-to-top').addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Animate elements on scroll
-const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
-window.addEventListener('scroll', function() {
-    elementsToAnimate.forEach(element => {
-        const rect = element.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-            element.classList.add('animate');
-        } else {
-            element.classList.remove('animate');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
         }
     });
+}, observerOptions);
+
+document.querySelectorAll('.project-card, .blog-post').forEach(element => {
+    observer.observe(element);
 });
+
