@@ -105,15 +105,15 @@ const navbar = document.querySelector(".graffiti-nav");
 
 window.addEventListener("scroll", function () {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > lastScrollTop) {
+
+    if (scrollTop > lastScrollTop && scrollTop > 50) {
         // Scrolling down - Hide navbar
-        navbar.style.top = "-110px"; 
+        navbar.style.transform = "translateY(-100%)"; 
     } else {
         // Scrolling up - Show navbar
-        navbar.style.top = "0";
+        navbar.style.transform = "translateY(0)";
     }
-    
+
     lastScrollTop = scrollTop;
 });
 
