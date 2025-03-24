@@ -613,7 +613,26 @@ input, textarea {
 
 @media (max-width: 480px) {
     :root {
-        --section-padding: 3rem 5%;
+        --section-padding: 2rem 3%;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+    }
+
+    .tagline {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .now-playing {
+        font-size: 0.8rem;
+    }
     }
 
     .section-title {
@@ -623,4 +642,3 @@ input, textarea {
     .project-card, .blog-post {
         padding: 1.5rem;
     }
-}
