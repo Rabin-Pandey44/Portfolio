@@ -130,16 +130,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 5%;
-    position: relative;
+    padding-top: 30px;
     overflow: hidden;
 }
 
 .hero-content {
     text-align: center;
-    position: relative;
     z-index: 1;
-    margin-left: 10px;
 }
 
 .tagline {
