@@ -100,6 +100,24 @@ document.getElementById('main-form').addEventListener('submit', (e) => {
     e.target.reset();
 });
 
+let lastScrollTop = 0;
+const navbar = document.querySelector(".graffiti-nav");
+
+window.addEventListener("scroll", function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop) {
+        // Scrolling down - Hide navbar
+        navbar.style.top = "-110px"; 
+    } else {
+        // Scrolling up - Show navbar
+        navbar.style.top = "0";
+    }
+    
+    lastScrollTop = scrollTop;
+});
+
+
 // Scroll Animation
 const observerOptions = {
     threshold: 0.1

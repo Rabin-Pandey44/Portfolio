@@ -83,6 +83,7 @@ body {
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
+    transition: top 0.3s ease-in-out;
     align-items: center;
     z-index: 1000;
 }
@@ -612,7 +613,7 @@ input, textarea {
 
 @media (max-width: 480px) {
     :root {
-        --section-padding: 6rem 5%;
+        --section-padding: 3rem 5%;
     }
 
     .section-title {
