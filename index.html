@@ -1,255 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rhythm & Hustle | Rabin's Universe</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rabin Pandey | Social Activist & Digital Storyteller</title>
+  <meta name="description" content="Rabin Pandey - Social Activist & Digital Storyteller from Gorkha, Nepal." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Color Palette - Dark Theme */
+      --bg-dark: #050810;
+      --bg-card: rgba(18, 24, 38, 0.6);
+      --bg-card-hover: rgba(30, 41, 59, 0.7);
+      
+      --accent-primary: #FFB400; /* Gold */
+      --accent-glow: rgba(255, 180, 0, 0.3);
+      --accent-blue: #38bdf8;
+      
+      --text-main: #ffffff;
+      --text-muted: #94a3b8;
+      
+      --border-light: rgba(255, 255, 255, 0.08);
+      --glass-blur: blur(16px);
+      
+      --font-main: 'Inter', sans-serif;
+      --font-code: 'JetBrains Mono', monospace;
+      
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      font-family: var(--font-main);
+      background-color: var(--bg-dark);
+      /* Subtle animated background mesh */
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(20, 30, 60, 0.6) 0%, transparent 50%),
+        radial-gradient(circle at 85% 85%, rgba(40, 20, 10, 0.4) 0%, transparent 50%);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    /* Main Container */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      display: grid;
+      grid-template-columns: 340px 1fr; /* Sidebar fixed width, Content flexible */
+      gap: 24px;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    /* --- Left Sidebar (Profile) --- */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Common Card Style */
+    .card {
+      background: var(--bg-card);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--border-light);
+      border-radius: 24px;
+      padding: 24px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    /* Profile Card specific */
+    .profile-card {
+      text-align: left;
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--accent-primary), #ff4a4a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #000;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .profile-info h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .profile-info h2 {
+      font-size: 0.8rem;
+      color: var(--accent-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 4px;
+    }
+
+    .location {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.05);
+      padding: 6px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #10b981; /* Green for active/online */
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+    }
+
+    .bio {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .bio span { color: var(--text-main); font-weight: 500; }
+
+    /* Tags/Pills */
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 6px 12px;
+      border-radius: 100px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-light);
+      color: var(--text-muted);
+    }
+
+    .pill.highlight {
+      background: rgba(255, 180, 0, 0.1);
+      border-color: rgba(255, 180, 0, 0.3);
+      color: var(--accent-primary);
+    }
+
+    /* Education List */
+    .edu-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      border-bottom: 1px dashed var(--border-light);
+      padding-bottom: 8px;
+    }
+
+    .edu-label { color: var(--text-muted); }
+    .edu-val { font-weight: 500; text-align: right; }
+
+    /* Focus Grid */
+    .focus-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .focus-item h4 {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    /* --- Right Content Area --- */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 40px;
+      background: radial-gradient(circle at top right, rgba(255, 180, 0, 0.08), transparent 60%), var(--bg-card);
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent-blue);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      background: linear-gradient(to right, #fff, #94a3b8);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 90%;
+      line-height: 1.6;
+    }
+
+    /* Bento Grid for Projects */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .section-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .list-styled li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .bullet {
+      width: 6px;
+      height: 6px;
+      background: var(--accent-primary);
+      border-radius: 50%;
+    }
+
+    /* Footer / Contact Bar */
+    .contact-bar {
+      grid-column: 1 / -1; /* Span full width */
+      background: rgba(10, 10, 10, 0.8);
+      border: 1px solid var(--border-light);
+      border-radius: 100px;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(20px);
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid transparent;
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .contact-pill:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: var(--accent-primary);
+    }
+
+    .contact-pill .label { color: var(--text-muted); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.05em; }
+    .contact-pill .value { font-family: var(--font-code); color: var(--text-main); }
+
+    .cta-button {
+      background: var(--text-main);
+      color: #000;
+      padding: 10px 24px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    
+    .cta-button:hover { transform: scale(1.05); }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #fff;
+      color: #000;
+      padding: 12px 24px;
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 100;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .container { grid-template-columns: 1fr; }
+      .contact-bar { flex-direction: column; gap: 16px; border-radius: 24px; padding: 20px; align-items: flex-start; }
+      .contact-links { width: 100%; }
+      .cta-button { width: 100%; text-align: center; }
+    }
+    
+    @media (max-width: 600px) {
+      .bento-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.8rem; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loader">
-        <div class="beat-loader"></div>
-    </div>
 
-    <!-- Navigation -->
-    <nav class="graffiti-nav">
-        <div class="nav-brand">Rabin Pandey</div>
-        <ul class="nav-items">
-            <li><a href="#home" class="nav-link active">Home</a></li>
-            <li><a href="#me" class="nav-link">About Me</a></li>
-            <li><a href="#path" class="nav-link">The Way</a></li>
-            <li><a href="#connect" class="nav-link">Contact</a></li>
+  <div class="container">
+    
+    <aside class="sidebar">
+      
+      <div class="card profile-card">
+        <div class="profile-header">
+          <div class="avatar">RP</div>
+          <div class="profile-info">
+            <h1>Rabin Pandey</h1>
+            <h2>Social Activist<sup>upcoming</sup></h2>
+          </div>
+        </div>
+        
+        <div class="location">
+          <span class="status-dot"></span>
+          Gorkha, Nepal
+        </div>
+        
+        <p class="bio">
+A learner, a dreamer, and someone who believes small steps can create big change. I want to inspire youth, speak for those who stay silent, and use storytelling to connect people with hope, courage, and possibility.        </p>
+        
+        <div class="tag-container">
+          <span class="pill highlight">Growth</span>
+          <span class="pill">Community</span>
+          <span class="pill">Purpose</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Education</div>
+        <ul class="edu-list">
+          <li class="edu-item">
+            <span class="edu-label">Degree</span>
+            <span class="edu-val">Learning from real-life experiences</span>
+          </li>
+          <li class="edu-item">
+            <span class="edu-label">University</span>
+            <span class="edu-val">The journey I’m building</span>
+          </li>
+          <li class="edu-item">
+            <span class="edu-label">Year</span>
+            <span class="edu-val">2007-Present(still learning)</span>
+          </li>
         </ul>
-    </nav>
+      </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="tagline">Rhythm<br>&<br>Hustle</h1>
-            <p class="hero-sub">Turning Thoughts Into Reality</p>
-            <div class="now-playing">
-                <i class="fas fa-headphones"></i>
-                <span id="current-track">Nas - The World Is Yours</span>
+      <div class="card">
+        <div class="section-title">Focus Areas</div>
+        <div class="focus-grid">
+          <div class="focus-item">
+            <h4>Youths & Society</h4>
+            <div class="tag-container">
+              <span class="pill">Motivation</span>
+              <span class="pill">Self-belief/help</span>
+              <span class="pill">Empowering Society</span>
             </div>
+          </div>
+          <div class="focus-item">
+            <h4>Digital Storytelling</h4>
+            <div class="tag-container">
+              <span class="pill">Honest Content</span>
+              <span class="pill">Real Issues</span>
+            </div>
+          </div>
         </div>
-        <canvas class="audio-visualizer"></canvas>
-    </section>
-    <!-- About Me Section -->
-<section id="me" class="section"><br><br>
-    <h2 class="section-title">The Essence of Me</h2><br>
-    <div class="about-grid">
-        <!-- Hip-Hop Passion Card -->
-        <article class="about-card hiphop-card">
-            <div class="card-header">
-                <i class="fas fa-headphones-alt"></i>
-                <h3>My Hip-Hop Universe</h3>
-                <p class="subtitle">Where Beats Meet Philosophy</p>
-            </div>
-            <div class="card-body">
-                <div class="artist-showcase">
-                    <div class="artist">
-                        <img src="images/eminem.jpeg" alt="Eminem" class="artist-img">
-                        <div class="artist-info">
-                            <h4>Eminem</h4>
-                            <p>"Lyrical Genius, Relentless Hustle"</p>
-                        </div>
-                    </div>
-                    <div class="artist">
-                        <img src="images/2pac.jpeg" alt="2Pac" class="artist-img">
-                        <div class="artist-info">
-                            <h4>2Pac</h4>
-                            <p>"Poet of the Streets, Voice of Change"</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="playlist-widget">
-                    <p class="now-playing">Currently Vibing To:</p>
-                    <div class="track">
-                        <span class="track-title">"Lose Yourself"</span>
-                        <span class="track-artist">Eminem</span>
-                        <div class="progress-bar"></div>
-                    </div>
-                </div>
-            </div>
-        </article>
+      </div>
 
-        <!-- Skills & Craft Card -->
-        <article class="about-card skills-card">
-            <div class="card-header">
-                <i class="fas fa-laptop-code"></i>
-                <h3>My Digital Arsenal</h3>
-                <p class="subtitle">Building the Future, One Code at a Time</p>
-            </div>
-            <div class="card-body">
-                <div class="skill-badges">
-                    <div class="skill">
-                        <i class="fab fa-code"></i>
-                        <span>Developer</span>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-chart-line"></i>
-                        <span>Marketing Strategist</span>
-                    </div>
-                    <div class="skill">
-                        <i class="fas fa-brain"></i>
-                        <span>Mindset Coach</span>
-                    </div>
-                </div>
-                <div class="mission-statement">
-                    <p>"Combining urban rhythm with digital innovation to create impactful solutions that resonate with both businesses and communities."</p>
-                </div>
-            </div>
-        </article>
-    </div>
-</section><br><br>
-    <!-- Voice of the Streets Section -->
-<section id="path" class="section dark-section">
-    <div class="culture-grid">
-        <!-- Left Column - Philosophy -->
-        <div class="culture-card mindset-card">
-            <div class="culture-header">
-                <div class="icon-wrapper">
-                    <i class="fas fa-universal-access"></i>
-                </div>
-                <h2>Code of the Concrete Jungle</h2>
-                <p class="subtitle">MORE TO GO</p>
-            </div>
+    </aside>
 
-            <div class="street-rules">
-                <div class="rule">
-                    <div class="rule-number">01</div>
-                    <div class="rule-content">
-                        <h4>Hustle with Honor</h4>
-                        <p>"Never chase money - chase value. The paper follows like dope rhymes follow pain."</p>
-                    </div>
-                </div>
+    <main class="main-content">
+      
+      <div class="card hero">
+        <span class="hero-eyebrow">Introduction</span>
+        <h1>Creating A Space Where Youth Can Be Heard & Society Can Be Empowered</h1>
+        <p>I am dedicated to amplifying the voices of young people and driving positive change in Nepali society through digital platforms to raise real questions, spark conversations, awareness, and push myself — and others — toward a better future.</p>
+      </div>
 
-                <div class="rule">
-                    <div class="rule-number">02</div>
-                    <div class="rule-content">
-                        <h4>Flow State First</h4>
-                        <p>"Treat your day like a classic album - no filler tracks, only essential bangers."</p>
-                    </div>
-                </div>
-            </div>
+      <div class="bento-grid">
+        
+        <div class="card">
+          <div class="section-title">Latest Initiatives</div>
+          <ul class="list-styled">
+            <li><span class="bullet"></span> Starting my first youth-focused content series</li>
+            <li><span class="bullet"></span> Sharing lessons I learn every day</li>
+            <li><span class="bullet"></span> Building a community of young people who think differently</li>
+          </ul>
         </div>
 
-            <div class="callout-box">
-                <i class="fas fa-bullhorn"></i>
-                <span id="current-quote">"Reminder: I'm not bossy, I just have better ideas"</span>
+        <div class="card">
+          <div class="section-title">Featured Project</div>
+          <h3 style="margin-bottom:8px; font-weight:600;">Nepal Youth Voices</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.5;">
+            Nepal Youth Voices
+            A growing platform where I share real stories, struggles, dreams and messages that can help young Nepali feel seen, understood, and supported.
+          </p>
+          <div class="tag-container" style="margin-top:12px;">
+            <span class="pill highlight"> Status: in progress</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-title">Recognition</div>
+          <ul class="list-styled">
+            <li><span class="bullet"></span> Appreciated by people who find my content helpful</li>
+            <li><span class="bullet"></span> कोहिकोहिले केE गर्न खोज्याछ भनेर चिन्छन, I will get known one day... <br> & I am not doing for attention.. but for purpose..</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="section-title">Testimonials</div>
+          <p style="font-style: italic; color:var(--text-muted);">
+            "My work will be an inspiration to young Nepali dreaming of change.. It’s about creating a movement where youth feel empowered to take action and build a better society together."
+          </p>
+        </div>
+
+      </div> <div class="contact-bar">
+        <div class="contact-links">
+          <div class="contact-pill" onclick="copyToClipboard('rabinpandey876@gmail.com')">
+            <span class="label">Email</span>
+            <span class="value">rabinpandey876@gmail.com</span>
+          </div>
+          <div class="contact-pill" onclick="copyToClipboard('+9779806565929')">
+            <span class="label">Phone</span>
+            <span class="value">+9779806565929</span>
+          </div>
+          <a href="https://instagram.com/pandey_yay" target="_blank" style="text-decoration:none;">
+            <div class="contact-pill">
+              <span class="label">IG</span>
+              <span class="value">@pandey_yay</span>
             </div>
+          </a>
         </div>
-    </div>
+        <a href="mailto:rabinpandey876@gmail.com" class="cta-button">Let's Collaborate</a>
+      </div>
+      <div style="height: 40px;">
+        <p style="color: #FFB400; text-align: center;"><b><strong>त्येही हो । एक दिनमा हुदैन तर एक दिन SURE हुनेछ । <br>
+                        म मेरो देश नेपाल लाई माया गर्छु र नेपाली हुनुमा मलाई गर्व छ ।  
+                  </strong></b></p>
+      </div>
+    </main>
+  </div>
 
-    <!-- Cultural Bridge -->
-    <div class="bridge-section">
-        <div class="bridge-content">
-            <h3>The Remix Philosophy</h3>
-            <div class="bridge-grid">
-                <div class="bridge-item">
-                    <div class="analogy">
-                        <span class="hiphop-element">Freestyle</span>
-                        <i class="fas fa-arrows-alt-h"></i>
-                        <span class="business-element">Business Pivot</span>
-                    </div>
-                    <p>Adaptation as an art form</p>
-                </div>
-                
-                <div class="bridge-item">
-                    <div class="analogy">
-                        <span class="hiphop-element">Cypher</span>
-                        <i class="fas fa-arrows-alt-h"></i>
-                        <span class="business-element">Networking</span>
-                    </div>
-                    <p>Energy exchange drives growth</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<br><br><br>
-    
-    <!-- Connect Section -->
-    <section id="connect" class="section dark-section">
-        <div class="icon-wrapper">
-            <i class="fas fa-handshake"></i>
-        </div>
-        <h2 class="section-title">Collab Zone</h2><br>
-        <div class="contact-grid">
-            <form class="contact-form" id="main-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Your Vision..." rows="5" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send <i class="fas fa-rocket"></i></button>
-            </form>
-        </div>
-    </section>
+  <div class="toast" id="toast">Copied to clipboard!</div>
 
-    <!-- Footer -->
-    <!-- Add this to your HTML -->
-<footer class="animated-footer">
-    <div class="footer-wave"></div>
-    
-    <div class="footer-content">
-        <div class="footer-column">
-            <h3 class="footer-title">Let's Connect</h3>
-            <div class="social-links">
-                <a href="https://www.github.com/Rabin-Pandey44" class="social-item">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="#" class="social-item">
-                    <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=100090425045905" class="social-item">
-                    <i class="fab fa-facebook"></i>
-                    <span>Facebook</span>
-                </a>
-            </div>
-        </div>
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        toast.textContent = `Copied: ${text}`;
+        toast.classList.add('show');
+        
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 3000);
+      });
+    }
+  </script>
 
-        <div class="footer-column">
-            <h3 class="footer-title">Drop a Beat</h3>
-            <div class="beat-indicator">
-                <div class="sound-wave">
-                    <div class="wave-bar"></div>
-                    <div class="wave-bar"></div>
-                    <div class="wave-bar"></div>
-                    <div class="wave-bar"></div>
-                    <div class="wave-bar"></div>
-                </div>
-                <p>Currently vibing to: <span id="current-track">Eminem - Lose Yourself</span></p>
-            </div>
-        </div>
-
-        <div class="footer-column">
-            <h3 class="footer-title">Quick Links</h3>
-            <nav class="footer-nav">
-                <a href="#home" class="footer-link">Home</a>
-                <a href="#me" class="footer-link">About me</a>
-                <a href="#path" class="footer-link">The Way</a>
-                <a href="#connect" class="footer-link">Contact</a>
-            </nav>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="copyright">
-            © 2025 Rabin Pandey | Crafted with <i class="fas fa-heart pulse"></i> in Nepal
-        </div>
-    </div>
-</footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
