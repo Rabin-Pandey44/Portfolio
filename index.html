@@ -280,6 +280,31 @@
       border-radius: 50%;
     }
 
+    .blog-links {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      max-width: 600px;
+      margin: 40px auto;
+      font-family: Arial, sans-serif;
+    }
+
+    .blog-links a {
+      text-decoration: none;
+      padding: 16px 20px;
+      border-radius: 8px;
+      background-color: #050810;
+      color: #FFB400;
+      border: 1px solid #FFB400;
+      transition: all 0.7s ease;
+    }
+
+    .blog-links a:hover {
+      background-color: #FFB400;
+      color: #050810;
+      transform: translateY(-2px);
+    }
+
     /* Footer / Contact Bar */
     .contact-bar {
       grid-column: 1 / -1; /* Span full width */
@@ -289,7 +314,7 @@
       padding: 12px 24px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: space-between;
       backdrop-filter: blur(20px);
     }
 
@@ -396,8 +421,9 @@
         </div>
         
         <p class="bio">
-A learner, a dreamer, and someone who believes small steps can create big change. I want to inspire youth, speak for those who stay silent, and use storytelling to connect people with hope, courage, and possibility.        </p>
-        
+          A learner, a dreamer, and someone who believes small steps can create big change. I want to inspire youth, speak for those who stay silent, and use storytelling to connect people with hope, courage, and possibility.        
+        </p>
+
         <div class="tag-container">
           <span class="pill highlight">Growth</span>
           <span class="pill">Community</span>
@@ -410,15 +436,15 @@ A learner, a dreamer, and someone who believes small steps can create big change
         <ul class="edu-list">
           <li class="edu-item">
             <span class="edu-label">Degree</span>
-            <span class="edu-val">Learning from real-life experiences</span>
+            <span class="edu-val">I will update it later..</span>
           </li>
           <li class="edu-item">
             <span class="edu-label">University</span>
-            <span class="edu-val">The journey I’m building</span>
+            <span class="edu-val">Society - my real classroom</span>
           </li>
           <li class="edu-item">
             <span class="edu-label">Year</span>
-            <span class="edu-val">2007-Present(still learning)</span>
+            <span class="edu-val">2007-Present(lifelong learner)</span>
           </li>
         </ul>
       </div>
@@ -435,7 +461,7 @@ A learner, a dreamer, and someone who believes small steps can create big change
             </div>
           </div>
           <div class="focus-item">
-            <h4>Digital Storytelling</h4>
+            <h4>Storytelling</h4>
             <div class="tag-container">
               <span class="pill">Honest Content</span>
               <span class="pill">Real Issues</span>
@@ -451,7 +477,8 @@ A learner, a dreamer, and someone who believes small steps can create big change
       <div class="card hero">
         <span class="hero-eyebrow">Introduction</span>
         <h1>Creating A Space Where Youth Can Be Heard & Society Can Be Empowered</h1>
-        <p>I am dedicated to amplifying the voices of young people and driving positive change in Nepali society through digital platforms to raise real questions, spark conversations, awareness, and push myself — and others — toward a better future.</p>
+        <p>I am dedicated to amplifying the voices of young people and driving positive change in Nepali society through digital platforms to raise real questions, spark conversations, and awareness.
+          My mission is simple: to push myself, my peers, and the wider community toward a better, more accountable future.</p>
       </div>
 
       <div class="bento-grid">
@@ -466,21 +493,21 @@ A learner, a dreamer, and someone who believes small steps can create big change
         </div>
 
         <div class="card">
-          <div class="section-title">Featured Project</div>
-          <h3 style="margin-bottom:8px; font-weight:600;">Nepal Youth Voices</h3>
+          <div class="section-title">Planning Project</div>
+          <h3 style="margin-bottom:8px; font-weight:600;">Localized action across Nepal.</h3>
           <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.5;">
-            Nepal Youth Voices
-            A growing platform where I share real stories, struggles, dreams and messages that can help young Nepali feel seen, understood, and supported.
+            Establishing a scalable digital infrastructure to mentor and mobilize grassroots leaders, 
+            ensuring voices from every region transition from being observers to agents of change.
           </p>
           <div class="tag-container" style="margin-top:12px;">
-            <span class="pill highlight"> Status: in progress</span>
+            <span class="pill highlight"> Status: in process</span>
           </div>
         </div>
 
         <div class="card">
           <div class="section-title">Recognition</div>
           <ul class="list-styled">
-            <li><span class="bullet"></span> Appreciated by people who find my content helpful</li>
+            <li><span class="bullet"></span> Appreciated by people who find my content real and impactful.</li>
             <li><span class="bullet"></span> कोहिकोहिले केE गर्न खोज्याछ भनेर चिन्छन, I will get known one day... <br> & I am not doing for attention.. but for purpose..</li>
           </ul>
         </div>
@@ -490,6 +517,19 @@ A learner, a dreamer, and someone who believes small steps can create big change
           <p style="font-style: italic; color:var(--text-muted);">
             "My work will be an inspiration to young Nepali dreaming of change.. It’s about creating a movement where youth feel empowered to take action and build a better society together."
           </p>
+        </div>
+
+        <div>
+        <p>Click below to read my blogs:</p>
+          <div class="blog-links">
+            <a href="/blogs/">Visit All Blogs</a>
+            <div class="blogs-lists">
+              <a href="/blogs/">The Journey Towards Change</a>
+              <a href="/blogs/">Why Youth's Voice Matters</a>
+              <a href="/blogs/">Action To Bring Change</a>
+              <a href="/blogs/">एक दिन सुरु हुन्छ..</a>
+            </div>
+          </div>
         </div>
 
       </div> <div class="contact-bar">
