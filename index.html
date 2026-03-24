@@ -102,14 +102,17 @@
       width: 70px;
       height: 70px;
       border-radius: 20px;
-      background: linear-gradient(135deg, var(--accent-primary), #ff4a4a);
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: #000;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .profile-info h1 {
@@ -283,9 +286,9 @@
     .blog-links {
       display: flex;
       flex-direction: row;
-      gap: 20px;
-      max-width: 600px;
-      margin: 40px auto;
+      gap: 5px;
+      max-width: 300px;
+      margin: 10px auto;
       font-family: Arial, sans-serif;
     }
 
@@ -293,16 +296,18 @@
       text-decoration: none;
       padding: 16px 20px;
       border-radius: 8px;
+      width: fit-content;
       background-color: #050810;
       color: #FFB400;
       border: 1px solid #FFB400;
       transition: all 0.7s ease;
+      animation: blinkEffect 0.1s infinite ease-in-out;
     }
 
     .blog-links a:hover {
       background-color: #FFB400;
       color: #050810;
-      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(255, 180, 0, 0.6);
     }
 
     /* Footer / Contact Bar */
@@ -397,6 +402,11 @@
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes blinkEffect {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.2; transform: scale(1.05); }
     }
   </style>
 </head>
@@ -518,13 +528,13 @@
 
         <div>
         <p>Click below to read my blogs:</p>
+        <div class="blog-lists">
+        <a href="/blogs/">Visit All Blogs</a>
           <div class="blog-links">
-            <a href="/blogs/">Visit All Blogs</a>
-            <div class="blogs-lists">
               <a href="/blogs/">Read All</a>
-              <a href="/blogs/">Click Here</a>
+              <a href="/blogs/">Click Here</a><br>
               <a href="/blogs/">Title Unavailable</a>
-              <a href="/blogs/">Come Onnn..</a>
+              <a href="/blogs/">Come Onnn..</a><br>
               <a href="/blogs/">Just Click and Read..</a>
             </div>
           </div>
