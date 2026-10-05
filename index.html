@@ -3,585 +3,265 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rabin Pandey | Social Activist & Digital Storyteller</title>
-  <meta name="description" content="Rabin Pandey - Social Activist & Digital Storyteller from Gorkha, Nepal." />
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      /* Color Palette - Dark Theme */
-      --bg-dark: #050810;
-      --bg-card: rgba(18, 24, 38, 0.6);
-      --bg-card-hover: rgba(30, 41, 59, 0.7);
-      
-      --accent-primary: #FFB400; /* Gold */
-      --accent-glow: rgba(255, 180, 0, 0.3);
-      --accent-blue: #38bdf8;
-      
-      --text-main: #ffffff;
-      --text-muted: #94a3b8;
-      
-      --border-light: rgba(255, 255, 255, 0.08);
-      --glass-blur: blur(16px);
-      
-      --font-main: 'Inter', sans-serif;
-      --font-code: 'JetBrains Mono', monospace;
-      
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      min-height: 100vh;
-      font-family: var(--font-main);
-      background-color: var(--bg-dark);
-      /* Subtle animated background mesh */
-      background-image: 
-        radial-gradient(circle at 15% 15%, rgba(20, 30, 60, 0.6) 0%, transparent 50%),
-        radial-gradient(circle at 85% 85%, rgba(40, 20, 10, 0.4) 0%, transparent 50%);
-      color: var(--text-main);
-      display: flex;
-      justify-content: center;
-      padding: 40px 20px;
-    }
-
-    /* Main Container */
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      display: grid;
-      grid-template-columns: 340px 1fr; /* Sidebar fixed width, Content flexible */
-      gap: 24px;
-      animation: fadeIn 0.8s ease-out;
-    }
-
-    /* --- Left Sidebar (Profile) --- */
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    /* Common Card Style */
-    .card {
-      background: var(--bg-card);
-      backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
-      border: 1px solid var(--border-light);
-      border-radius: 24px;
-      padding: 24px;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card:hover {
-      background: var(--bg-card-hover);
-      transform: translateY(-4px);
-      border-color: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    }
-
-    /* Profile Card specific */
-    .profile-card {
-      text-align: left;
-    }
-
-    .profile-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
-    .avatar {
-      width: 70px;
-      height: 70px;
-      border-radius: 20px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .profile-info h1 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .profile-info h2 {
-      font-size: 0.8rem;
-      color: var(--accent-primary);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-top: 4px;
-    }
-
-    .location {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      background: rgba(255,255,255,0.05);
-      padding: 6px 12px;
-      border-radius: 100px;
-      margin-bottom: 20px;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      background-color: #10b981; /* Green for active/online */
-      border-radius: 50%;
-      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
-    }
-
-    .bio {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-
-    .bio span { color: var(--text-main); font-weight: 500; }
-
-    /* Tags/Pills */
-    .tag-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .pill {
-      font-size: 0.75rem;
-      padding: 6px 12px;
-      border-radius: 100px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border-light);
-      color: var(--text-muted);
-    }
-
-    .pill.highlight {
-      background: rgba(255, 180, 0, 0.1);
-      border-color: rgba(255, 180, 0, 0.3);
-      color: var(--accent-primary);
-    }
-
-    /* Education List */
-    .edu-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .edu-item {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.85rem;
-      border-bottom: 1px dashed var(--border-light);
-      padding-bottom: 8px;
-    }
-
-    .edu-label { color: var(--text-muted); }
-    .edu-val { font-weight: 500; text-align: right; }
-
-    /* Focus Grid */
-    .focus-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    .focus-item h4 {
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-      color: var(--text-main);
-    }
-
-    /* --- Right Content Area --- */
-    .main-content {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 40px;
-      background: radial-gradient(circle at top right, rgba(255, 180, 0, 0.08), transparent 60%), var(--bg-card);
-    }
-
-    .hero-eyebrow {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--accent-blue);
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .hero h1 {
-      font-size: 2.2rem;
-      line-height: 1.2;
-      margin-bottom: 16px;
-      background: linear-gradient(to right, #fff, #94a3b8);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 90%;
-      line-height: 1.6;
-    }
-
-    /* Bento Grid for Projects */
-    .bento-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .section-title {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    .list-styled li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    .bullet {
-      width: 6px;
-      height: 6px;
-      background: var(--accent-primary);
-      border-radius: 50%;
-    }
-
-    .blog-links {
-      display: flex;
-      flex-direction: row;
-      gap: 5px;
-      max-width: 300px;
-      margin: 10px auto;
-      font-family: Arial, sans-serif;
-    }
-
-    .blog-links a {
-      text-decoration: none;
-      padding: 16px 20px;
-      border-radius: 8px;
-      width: fit-content;
-      background-color: #050810;
-      color: #FFB400;
-      border: 1px solid #FFB400;
-      transition: all 0.7s ease;
-      animation: blinkEffect 0.1s infinite ease-in-out;
-    }
-
-    .blog-links a:hover {
-      background-color: #FFB400;
-      color: #050810;
-      box-shadow: 0 0 20px rgba(255, 180, 0, 0.6);
-    }
-
-    /* Footer / Contact Bar */
-    .contact-bar {
-      grid-column: 1 / -1; /* Span full width */
-      background: rgba(10, 10, 10, 0.8);
-      border: 1px solid var(--border-light);
-      border-radius: 100px;
-      padding: 12px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: space-between;
-      backdrop-filter: blur(20px);
-    }
-
-    .contact-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .contact-pill {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid transparent;
-      padding: 8px 16px;
-      border-radius: 100px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .contact-pill:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: var(--accent-primary);
-    }
-
-    .contact-pill .label { color: var(--text-muted); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.05em; }
-    .contact-pill .value { font-family: var(--font-code); color: var(--text-main); }
-
-    .cta-button {
-      background: var(--text-main);
-      color: #000;
-      padding: 10px 24px;
-      border-radius: 100px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: transform 0.2s;
-    }
-    
-    .cta-button:hover { transform: scale(1.05); }
-
-    /* Toast Notification */
-    .toast {
-      position: fixed;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
-      background: #fff;
-      color: #000;
-      padding: 12px 24px;
-      border-radius: 100px;
-      font-weight: 500;
-      font-size: 0.9rem;
-      opacity: 0;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      z-index: 100;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-
-    .toast.show {
-      transform: translateX(-50%) translateY(0);
-      opacity: 1;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 900px) {
-      .container { grid-template-columns: 1fr; }
-      .contact-bar { flex-direction: column; gap: 16px; border-radius: 24px; padding: 20px; align-items: flex-start; }
-      .contact-links { width: 100%; }
-      .cta-button { width: 100%; text-align: center; }
-    }
-    
-    @media (max-width: 600px) {
-      .bento-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.8rem; }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes blinkEffect {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.2; transform: scale(1.05); }
-    }
-  </style>
+  <meta name="theme-color" content="#f7f2e9" />
+  <title>Activistbecoming — Small steps, a kinder world</title>
+  <meta name="description" content="Rabin Pandey is an activist and storyteller from Gorkha, Nepal. Join the 1-Cigarette Swap and turn one small daily choice into care for street dogs and yourself." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to the good part</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#home" aria-label="Activistbecoming home">Activist<span>becoming</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#about">About Me</a>
+        <a href="#campaign">What I Want To Do</a>
+        <a href="#stories">My Stories</a>
+        <a href="#future">Future Vision</a>
+        <a href="#contact">Contact</a>
+        <a class="button button-small button-dark" href="#donate">Donate Now</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="container">
-    
-    <aside class="sidebar">
-      
-      <div class="card profile-card">
-        <div class="profile-header">
-          <div class="avatar"><img src="../images/myprofile.jpeg" alt="Rabin Pandey"></div>
-          <div class="profile-info">
-            <h1>Rabin Pandey</h1>
-            <h2>Activist<sup>becoming</sup></h2>
+  <main id="main">
+    <section class="hero section-wrap" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> A small beginning from Gorkha, Nepal</p>
+        <h1 id="hero-title">Skip One Cigarette Today.<br /><em>Save a Life Forever.</em></h1>
+        <p class="hero-lede">What if the cost of one cigarette could become a meal for a street dog—and one more reason to care for yourself? This is a small, imperfect start toward a gentler kind of change.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#campaign">Swap 1 Cigarette Now <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#about">Read My Story <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-note"><span aria-hidden="true">✳</span> No grand promises. Just one choice, made today.</div>
+      </div>
+      <div class="hero-art">
+        <div class="photo-frame">
+          <img src="images/myprofile.jpeg" alt="Rabin Pandey, activist and storyteller from Gorkha, Nepal" />
+          <div class="photo-caption"><span class="caption-mark">“</span><span>Still becoming.<br />Still showing up.</span></div>
+        </div>
+        <div class="floating-note note-one"><span>01</span> one small choice</div>
+        <div class="floating-note note-two"><span aria-hidden="true">♥</span> more room for care</div>
+      </div>
+    </section>
+
+    <section class="intro-band" aria-label="A note about the campaign">
+      <p>One cigarette less. One small act of care more. <span>That’s where we begin.</span></p>
+    </section>
+
+    <section class="section-wrap section-pad about-section" id="about" aria-labelledby="about-title">
+      <div class="section-heading">
+        <p class="eyebrow">A little about me</p>
+        <h2 id="about-title">The Person Behind the Purpose</h2>
+      </div>
+      <div class="about-grid">
+        <blockquote class="quote-card">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <p>Change doesn't happen in one day, but ONE DAY it definitely will.</p>
+          <cite>— Rabin Pandey</cite>
+        </blockquote>
+        <div class="about-copy">
+          <p class="lead-copy">I’m Rabin Pandey—an activist and storyteller from Gorkha, Nepal, learning as I go.</p>
+          <p>I know change can feel too big to begin. So I’m drawn to the small things we can actually do: pause for a moment, spend a little more thoughtfully, tell the truth about what we’re facing, and invite someone else along.</p>
+          <p>The 1-Cigarette Swap is one idea I want to try—not a cure or a promise, but a daily nudge toward caring for ourselves and the street dogs around us. I’m still becoming the person this work asks me to be.</p>
+          <a class="text-link" href="#campaign">Come see what I have in mind <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="campaign-section section-pad" id="campaign" aria-labelledby="campaign-title">
+      <div class="section-wrap">
+        <div class="section-heading section-heading-center">
+          <p class="eyebrow">A small habit, shared with care</p>
+          <h2 id="campaign-title">What I Want To Do: The 1-Cigarette Swap</h2>
+          <p class="section-intro">This isn't about judging anyone or pretending change is easy. It's an invitation to pause, make one different choice, and see what that choice can do.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card">
+            <span class="step-number">01</span>
+            <span class="step-icon" aria-hidden="true">Ⅱ</span>
+            <h3>Pause</h3>
+            <p>Before reaching for a cigarette today, give yourself one quiet moment. Notice what you need right now.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">02</span>
+            <span class="step-icon" aria-hidden="true">↗</span>
+            <h3>Swap</h3>
+            <p>If you're ready, redirect the cost of one cigarette—roughly Rs. 15–20, or about $0.15—to something kinder.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">03</span>
+            <span class="step-icon" aria-hidden="true">♥</span>
+            <h3>Make room for care</h3>
+            <p>Your choice could help provide a meal for a street dog, while giving you a mindful step back from a habit.</p>
+          </article>
+        </div>
+
+        <div class="calculator" aria-labelledby="calculator-title">
+          <div class="calculator-copy">
+            <p class="eyebrow">Try the numbers</p>
+            <h3 id="calculator-title">What could your small choices add up to?</h3>
+            <p>Move the slider to explore a rough estimate. You can start with just one—there's no pressure to change everything at once.</p>
+            <label for="cigarette-slider">Cigarettes skipped per day: <strong id="slider-value">1</strong></label>
+            <input id="cigarette-slider" type="range" min="1" max="30" value="1" step="1" aria-describedby="estimate-note" />
+            <div class="range-labels"><span>1 a day</span><span>30 a day</span></div>
+            <p class="estimate-note" id="estimate-note">Estimates use Rs. 18 per cigarette and a 30-day month. Real prices, food costs, and exchange rates vary; one portion isn't necessarily a full meal.</p>
           </div>
-        </div>
-        
-        <div class="location">
-          <span class="status-dot"></span>
-          Gorkha, Nepal
-        </div>
-        
-        <p class="bio">
-          A learner, a dreamer, and someone who believes small steps can create big change. I want to inspire youth, speak for those who stay silent, and use storytelling to connect people with hope, courage, and possibility.        
-        </p>
-
-        <div class="tag-container">
-          <span class="pill highlight">Growing with PURPOSE</span>
-
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="section-title">Education</div>
-        <ul class="edu-list">
-          <li class="edu-item">
-            <span class="edu-label">Degree</span>
-            <span class="edu-val">I will update it later..</span>
-          </li>
-          <li class="edu-item">
-            <span class="edu-label">Institution</span>
-            <span class="edu-val">Society - my real classroom</span>
-          </li>
-          <li class="edu-item">
-            <span class="edu-label">Since</span>
-            <span class="edu-val">2007-Present(lifelong learner)</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="section-title">Focusing ON</div>
-        <div class="focus-grid">
-          <div class="focus-item">
-            <h4>Youths & Society</h4>
-            <div class="tag-container">
-              <span class="pill">Motivation</span>
-              <span class="pill">Self-belief/help</span>
-              <span class="pill">Empowering Society</span>
+          <div class="impact-grid" aria-live="polite" aria-atomic="true">
+            <div class="impact-card impact-feature">
+              <span class="impact-label">Possible dog-food portions / day</span>
+              <strong id="meals-output">1</strong>
+              <span class="impact-detail">one portion per skipped cigarette</span>
             </div>
-          </div>
-          <div class="focus-item">
-            <h4>Storytelling</h4>
-            <div class="tag-container">
-              <span class="pill">Honest Content</span>
-              <span class="pill">Real Issues</span>
+            <div class="impact-card">
+              <span class="impact-label">Estimated savings / month</span>
+              <strong id="npr-output">NPR 540</strong>
+              <span class="impact-detail" id="usd-output">about USD 4.00</span>
             </div>
-          </div>
-        </div>
-      </div>
-
-    </aside>
-
-    <main class="main-content">
-      
-      <div class="card hero">
-        <span class="hero-eyebrow">Introduction</span>
-        <h1>Who I Am</h1>
-        <p>I am Rabin Pandey, a passionate activist and storyteller from Gorkha, Nepal. I believe in the power of youth to drive change and am committed to make a change with the help of young voice and perspective.</p>
-      </div>
-
-      <div class="bento-grid">
-        
-        <div class="card">
-          <div class="section-title">Latest Initiatives</div>
-          <ul class="list-styled">
-            <li><span class="bullet"></span> Content Creation</li>
-            <li><span class="bullet"></span> Trying new approaches in my own village</li>
-            <li><span class="bullet"></span> Networking with young people who think differently</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="section-title">Planning Project</div>
-          <h3 style="margin-bottom:8px; font-weight:600;">Localized action across Nepal.</h3>
-          <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.5;">
-            I am planning to start a project that focuses on localized action across Nepal. The idea is to empower local communities, especially youth, to identify their own challenges and take initiative to address them. This could involve workshops, community events, and digital storytelling to share their journeys and inspire others.
-          </p>
-          <div class="tag-container" style="margin-top:12px;">
-            <span class="pill highlight"> Status: in process</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="section-title">Recognition</div>
-          <ul class="list-styled">
-            <li><span class="bullet"></span> Not Yet</li>
-            <li><span class="bullet"></span> Not Yet</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="section-title">Quote</div>
-          <p style="font-style: italic; color:var(--text-muted);">
-            "Change doesn't happen overnight. We need to take action with purpose and commitment. It’s about creating a movement where youth feel empowered to take action and build a better society together."
-          </p>
-        </div>
-
-        <div>
-        <p>Click below to read my blogs:</p>
-        <div class="blog-lists">
-        <a href="/blogs/">Visit All Blogs</a>
-          <div class="blog-links">
-              <a href="/blogs/">Read All</a>
-              <a href="/blogs/">Click Here</a><br>
-              <a href="/blogs/">Title Unavailable</a>
-              <a href="/blogs/">Come Onnn..</a><br>
-              <a href="/blogs/">Just Click and Read..</a>
+            <div class="impact-card">
+              <span class="impact-label">Potential impact / month</span>
+              <strong id="impact-output">30</strong>
+              <span class="impact-detail">possible food portions, if redirected</span>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-      </div> <div class="contact-bar">
-        <div class="contact-links">
-          <div class="contact-pill" onclick="copyToClipboard('rabinpandey876@gmail.com')">
-            <span class="label">Email</span>
-            <span class="value">rabinpandey876@gmail.com</span>
+    <section class="section-wrap section-pad future-section" id="future" aria-labelledby="future-title">
+      <div class="section-heading">
+        <p class="eyebrow">One step at a time</p>
+        <h2 id="future-title">Where This Journey Leads Next</h2>
+        <p class="section-intro">I have a long way to go, and I want to be honest about that. Here’s the path I hope we can build—with care, community, and the people who know these needs best.</p>
+      </div>
+      <ol class="timeline">
+        <li class="timeline-item is-active">
+          <span class="timeline-marker" aria-hidden="true">01</span>
+          <div class="timeline-content">
+            <span class="phase-label">Active — beginning here</span>
+            <h3>Street dogs, cared for with dignity</h3>
+            <p>Start with the 1-Cigarette Swap, street-dog food, and basic medical care in the community.</p>
           </div>
-          <div class="contact-pill" onclick="copyToClipboard('+9779806565929')">
-            <span class="label">Phone</span>
-            <span class="value">+9779806565929</span>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-marker" aria-hidden="true">02</span>
+          <div class="timeline-content">
+            <span class="phase-label">Next step</span>
+            <h3>Show up for people who are often unseen</h3>
+            <p>Grow into direct outreach for people experiencing homelessness, listening first and working with local support.</p>
           </div>
-          <a href="https://instagram.com/pandey_yay" target="_blank" style="text-decoration:none;">
-            <div class="contact-pill">
-              <span class="label">IG</span>
-              <span class="value">@pandey_yay</span>
-            </div>
+        </li>
+        <li class="timeline-item">
+          <span class="timeline-marker" aria-hidden="true">03</span>
+          <div class="timeline-content">
+            <span class="phase-label">The dream I'm holding</span>
+            <h3>A place to begin again</h3>
+            <p>One day, help build a dedicated rehabilitation and recovery center in Nepal—where people facing addiction can find support, dignity, and a way to rebuild their lives.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="stories-section section-pad" id="stories" aria-labelledby="stories-title">
+      <div class="section-wrap">
+        <div class="stories-heading">
+          <div class="section-heading">
+            <p class="eyebrow">Words from the road</p>
+            <h2 id="stories-title">Raw Stories &amp; Everyday Thoughts</h2>
+            <p class="section-intro">Some days I have a story. Some days I only have a question. These are reflections on growing up, finding a voice, and trying to make change feel possible.</p>
+          </div>
+          <a class="text-link" href="blogs/">All my writing <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="story-grid">
+          <a class="story-card" href="blogs/storytelling/">
+            <span class="story-category">My journey</span>
+            <h3>My Journey Towards Change, A Mission</h3>
+            <p>A personal note on finding the courage to speak before you feel completely ready.</p>
+            <span class="story-read">Read the story <span aria-hidden="true">↗</span></span>
           </a>
+          <a class="story-card" href="blogs/youth-voices/">
+            <span class="story-category">For young voices</span>
+            <h3>Why Youth's Voice Matters</h3>
+            <p>What might shift when young people are heard—not as a promise, but as a beginning?</p>
+            <span class="story-read">Read the story <span aria-hidden="true">↗</span></span>
+          </a>
+          <article class="story-card story-coming">
+            <span class="story-category">Still taking shape</span>
+            <h3>Why Addiction Is Everyone's Battle</h3>
+            <p>A future reflection about compassion, recovery, and the way we show up for each other.</p>
+            <span class="story-read">A story I'm still writing</span>
+          </article>
         </div>
-        <a href="mailto:rabinpandey876@gmail.com" class="cta-button">Let's Collaborate</a>
       </div>
-      <div style="height: 40px;">
-        <p style="color: #FFB400; text-align: center;"><b><strong>CHANGE एक दिनमा हुदैन तर एक दिन SURE हुनेछ । <br>
-                          झ्याउ नमानी पुरै ब्लगहरू पढिदिनुहोला। धन्यवाद, वेबसाइट भ्रमण गर्नु भएकोमा।
-                  </strong></b></p>
+    </section>
+
+    <section class="section-wrap section-pad contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="section-heading section-heading-center">
+        <p class="eyebrow">There's room for you here</p>
+        <h2 id="contact-title">Let's Change the World Together</h2>
+        <p class="section-intro">Have a thought, a question, or a way we could help each other? I’d really like to hear from you.</p>
       </div>
-    </main>
-  </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Reach out, any way you like</h3>
+          <p>There’s no perfect way to start a conversation. A simple hello is enough.</p>
+          <a class="contact-detail" href="mailto:rabinpandey876@gmail.com"><span>Email</span><strong>rabinpandey876@gmail.com</strong></a>
+          <a class="contact-detail" href="tel:+9779806565929"><span>Call or message</span><strong>+977 9806565929</strong></a>
+          <a class="contact-detail" href="https://instagram.com/pandey_yay" target="_blank" rel="noopener noreferrer"><span>Instagram</span><strong>@pandey_yay ↗</strong></a>
+          <div class="contact-note">Based in Gorkha, Nepal <span aria-hidden="true">·</span> Always learning</div>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <h3>Send me a note</h3>
+          <p>Your message will open in your email app so you can send it directly.</p>
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="What should I call you?" required />
+          <label for="email">Your email</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+          <label for="message">What’s on your mind?</label>
+          <textarea id="message" name="message" rows="4" placeholder="Write whatever feels right..." required></textarea>
+          <button class="button button-primary form-submit" type="submit">Open email to send <span aria-hidden="true">↗</span></button>
+          <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
 
-  <div class="toast" id="toast">Copied to clipboard!</div>
+    <section class="donate-section section-pad" id="donate" aria-labelledby="donate-title">
+      <div class="section-wrap donate-wrap">
+        <div class="donate-copy">
+          <p class="eyebrow">If you’d like to help</p>
+          <h2 id="donate-title">A little support can travel a long way.</h2>
+          <p>For now, the best way to help is to share the idea, start your own swap, or get in touch. I’m preparing verified payment details before accepting donations—your trust matters more than a quick button.</p>
+          <a class="button button-light" href="#contact">Talk with me about supporting this <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="payment-panel">
+          <h3>Ways to give, coming soon</h3>
+          <p>I’ll add working QR codes and verified links here once the accounts are ready.</p>
+          <div class="payment-options" aria-label="Payment methods planned">
+            <div class="payment-option"><span class="payment-symbol">NPR</span><span>eSewa<small>Verified QR to come</small></span></div>
+            <div class="payment-option"><span class="payment-symbol">K</span><span>Khalti<small>Verified QR to come</small></span></div>
+            <div class="payment-option"><span class="payment-symbol">F</span><span>Fonepay<small>Verified QR to come</small></span></div>
+            <div class="payment-option"><span class="payment-symbol">♡</span><span>Ko-fi / Buy Me a Coffee<small>Support link to come</small></span></div>
+          </div>
+          <p class="payment-footnote">No payment is collected on this page yet.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <script>
-    function copyToClipboard(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        const toast = document.getElementById('toast');
-        toast.textContent = `Copied: ${text}`;
-        toast.classList.add('show');
-        
-        setTimeout(() => {
-          toast.classList.remove('show');
-        }, 3000);
-      });
-    }
-  </script>
-
+  <footer class="site-footer">
+    <div class="section-wrap footer-inner">
+      <a class="brand" href="#home">Activist<span>becoming</span></a>
+      <p>Still becoming. Still believing one small act can matter.</p>
+      <a href="#home" class="back-top">Back to top ↑</a>
+    </div>
+  </footer>
 </body>
 </html>
