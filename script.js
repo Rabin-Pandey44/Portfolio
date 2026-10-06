@@ -4,18 +4,20 @@ const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector("#site-nav");
 
 if (menuToggle && siteNav) {
+  const setMenuState = (isOpen) => {
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    siteNav.classList.toggle("is-open", isOpen);
+  };
+
   menuToggle.addEventListener("click", () => {
-    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", String(!isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
-    siteNav.classList.toggle("is-open", !isOpen);
+    setMenuState(menuToggle.getAttribute("aria-expanded") !== "true");
   });
 
   siteNav.addEventListener("click", (event) => {
-    if (event.target instanceof HTMLAnchorElement) {
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Open navigation");
-      siteNav.classList.remove("is-open");
+    const link = event.target.closest("a");
+    if (link) {
+      setMenuState(false);
     }
   });
 }
@@ -30,19 +32,23 @@ const impactOutput = document.querySelector("#impact-output");
 function updateImpactEstimate() {
   if (!slider || !sliderValue || !mealsOutput || !nprOutput || !usdOutput || !impactOutput) return;
 
-  const cigarettesPerDay = Number(slider.value);
+  const cigarettesPerDay = Number.parseInt(slider.value, 10) || 0;
   const monthlySavingsNpr = cigarettesPerDay * 18 * 30;
   const monthlySavingsUsd = monthlySavingsNpr / 135;
+  const cigaretteLabel = cigarettesPerDay === 1 ? "cigarette" : "cigarettes";
 
   sliderValue.textContent = String(cigarettesPerDay);
-  slider.setAttribute("aria-valuetext", `${cigarettesPerDay} ${cigarettesPerDay === 1 ? "cigarette" : "cigarettes"} per day`);
+  slider.setAttribute("aria-valuetext", `${cigarettesPerDay} ${cigaretteLabel} per day`);
   mealsOutput.textContent = String(cigarettesPerDay);
   nprOutput.textContent = `NPR ${monthlySavingsNpr.toLocaleString("en")}`;
   usdOutput.textContent = `about USD ${monthlySavingsUsd.toFixed(2)}`;
   impactOutput.textContent = (cigarettesPerDay * 30).toLocaleString("en");
 }
 
-slider?.addEventListener("input", updateImpactEstimate);
+if (slider) {
+  slider.addEventListener("input", updateImpactEstimate);
+}
+
 updateImpactEstimate();
 
 const contactForm = document.querySelector("#contact-form");
